@@ -1,23 +1,37 @@
-import logo from './logo.svg';
-import './App.css';
-import React from 'react'
+import React, { Component } from 'react';
 
-function App() {
-  return (
-    <div>
-        <div className="b1"
-        />
-             <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-        <h1>hello</h1>  
-    </div>
-  );
+import { Route, Redirect, withRouter, Switch } from "react-router-dom";
+
+import './App.css';
+import './components/btn-style/link-Btn-Style.css';
+
+import Home from './components/home/Home'
+import About from './components/about/About'
+import Products from './components/products/Products'
+import Header from './components/header/header'
+import Footer from './components/footer/Footer'
+
+class App extends Component  {
+
+  render() {
+
+    const history  = this.props
+
+    return (
+      <div className="mainWrapper">
+          <Header />
+          <Switch>
+            <div className="content">
+              <Redirect from='/' to='/home'/>
+              <Route history={history} path='/about' component={About} />
+              <Route history={history} path='/home' component={Home} />
+              <Route history={history} path='/products' component={Products} />
+            </div>
+          </Switch>
+          <Footer />
+      </div>
+    );
+  }
 }
 
-export default App;
+export default withRouter(App);

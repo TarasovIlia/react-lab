@@ -6,15 +6,28 @@ body {
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
 }
+* {
+  margin: 0px;
+  padding: 0px;
+  box-sizing: border-box;
+}
 
 code {
   font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
 }
 
-.b1 {
-  width: 40px;
-  height: 40px;
-  margin: 100px auto 0px auto;
-  border: solid black 2px;
+.mainWrapper {
+  max-width: 100%;
+  position: relative;
+}
+
+a {
+  text-decoration: none;
+  color: black;
+}
+
+p {
+  font-size: 22px;
+  font-weight: 700;
 }
