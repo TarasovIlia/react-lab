@@ -5,4 +5,18 @@
     width: 100%;
     height: 100px;
     background-color: rgb(240, 239, 197);
+
+    display: flex;
+    justify-content: center;
+}
+
+.GameIcon {
+    width: 50px;
+    margin: 20px;
+    cursor: pointer;
+}
+
+li {
+    list-style-type: none;
+    float: right;
 }
