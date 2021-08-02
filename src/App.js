@@ -11,11 +11,31 @@ import Products from './components/products/Products'
 import Header from './components/header/header'
 import Footer from './components/footer/Footer'
 
+
+
 class App extends Component  {
+  constructor(props) {
+    super(props)
+    this.state = { error : null }
+  }
+
+  componentDidCatch(error) {
+    this.setState({
+      error: error,
+    })
+  }
+  
 
   render() {
-
     const history  = this.props
+
+    if (this.state.error) {
+      console.error()
+      window.location.pathname = "http://localhost:3000/home"
+      return (
+        <h1>что то пошло не так</h1>
+      );
+    }
 
     return (
       <div className="mainWrapper">

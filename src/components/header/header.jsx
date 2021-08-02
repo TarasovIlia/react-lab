@@ -1,7 +1,6 @@
 import React, { Component} from 'react'
 import { Link } from 'react-router-dom'
 
-
 import NavigationData from '../data/navigationData'
 
 import '../style/headerStyle.css'
@@ -11,10 +10,10 @@ const StyleForBtn =  { boxShadow : ButtonStyleActive }
 
 
 export default class Header extends Component {
-    constructor() {
-        super()
+    constructor(props) {
+        super(props)
         this.state = {
-            data : NavigationData
+            data : NavigationData,
         }
     }
 render () {

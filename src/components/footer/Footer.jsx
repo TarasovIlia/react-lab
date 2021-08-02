@@ -1,7 +1,9 @@
 import React from 'react';
 import '../style/footerStyle.css';
 function Footer () {
+  
     return (
+        
         <footer className="footerWrapper">
             <ui>
                 <li><a href="https://www.ea.com/"><img className='GameIcon' src="https://upload.wikimedia.org/wikipedia/commons/0/0d/Electronic-Arts-Logo.svg" alt="ElecrtonicArts"/></a></li>
