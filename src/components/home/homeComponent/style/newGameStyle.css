@@ -1,0 +1,27 @@
+.WrapperGame_Group_grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 100px;
+    grid-row-gap: 40px;
+
+    margin: 0px auto;
+}
+.gameCard {
+    margin-top: 60px;
+    height: 420px;
+    border-radius: 22px;
+    border: solid 2px blueviolet;
+    padding: 16px;
+
+    cursor: pointer;
+}
+.gameCard img{
+    width: 100%;
+}
+.gameDescription {
+    position: relative;
+    top: -150px;
+    background-color: #000;
+    padding: 10px;
+}

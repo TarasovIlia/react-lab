@@ -1,0 +1,59 @@
+.mainWrapper_Group {
+    width: 80%;
+    height: auto;
+    position: relative;
+    margin-top: 50px;
+}
+.mainWrapper_Group::before {
+    content: '';
+    position: absolute;
+    width: 100%;
+    height: 2px;
+    background-color: #fff;
+    top: 35px;
+}
+
+.mainWrapper_Catigories p {
+    font-size: 22px;
+    font-weight: 600;
+}
+
+.WrapperCategories_Group_grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    grid-column-gap: 250px;
+    grid-row-gap: 40px;
+}
+
+.CardsCategorise {
+    height: 300px;
+    border: solid 2px #fff;
+    border-radius: 22px;
+    border-bottom: solid 7px #fff;
+
+    padding: 16px;
+    margin-top: 60px;
+
+    transition-duration: 0.1s;
+
+    cursor: pointer;
+}
+.CardsCategorise:hover {
+    border: solid 2px blueviolet;
+    border-bottom: solid 7px blueviolet;
+    transition-duration: 0.1s;
+}
+
+.CardsCategorise p {
+    text-align: center;
+    margin-top: 20px;
+}
+.ImgCategories {
+    width: 200px;
+    height: 200px;
+    margin: 0px auto;
+}
+.ImgCategories img {
+    width: 100%;
+    height: 100%;
+}

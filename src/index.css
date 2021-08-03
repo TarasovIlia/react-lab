@@ -5,6 +5,7 @@ body {
     sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  background-color: rgb(56, 56, 56);
 }
 * {
   margin: 0px;
@@ -27,7 +28,17 @@ a {
   color: black;
 }
 
+h1 {
+  color: #fff;
+}
+
 p {
   font-size: 21px;
-  font-weight: 700;
+  font-weight: 400;
+  color: #fff;
+}
+
+input :active, :hover, :focus {
+  outline: 0;
+  outline-offset: 0;
 }

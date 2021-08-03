@@ -5,8 +5,8 @@ import NavigationData from '../data/navigationData'
 
 import '../style/headerStyle.css'
 
-const ButtonStyleActive = "2px 1px 6px 2px rgba(0, 0, 0, 0.247)"
-const StyleForBtn =  { boxShadow : ButtonStyleActive } 
+const ButtonStyleActive = "solid 5px blueviolet"
+const StyleForBtn =  { borderBottom : ButtonStyleActive } 
 
 
 export default class Header extends Component {
