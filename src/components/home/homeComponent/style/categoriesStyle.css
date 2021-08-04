@@ -1,10 +1,10 @@
-.mainWrapper_Group {
+.main-wrapper-group {
     width: 90%;
     height: auto;
     position: relative;
     margin-top: 50px;
 }
-.mainWrapper_Group::before {
+.main-wrapper-group::before {
     content: '';
     position: absolute;
     width: 100%;
@@ -18,7 +18,7 @@
     font-weight: 600;
 }
 
-.WrapperCategories_Group_grid {
+.main-wrapper-group-grid-categories {
     display: grid;
     grid-template-columns: 1fr 1fr 1fr;
     grid-column-gap: 250px;

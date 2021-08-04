@@ -15,9 +15,9 @@ class Categories extends React.Component {
     render() {
         let categoriesList = this.state.datasCategories.map(categories => <CategoriesCards key={categories.key} name={categories.categoriesName} img={categories.imgOfCategoty}/>)
         return (
-            <div className='mainWrapper_Group'>
+            <div className='main-wrapper-group'>
                <p>Categories</p>
-               <div className='WrapperCategories_Group_grid'>{categoriesList}</div>
+               <div className='main-wrapper-group-grid-categories'>{categoriesList}</div>
             </div>
         )
     }

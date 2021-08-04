@@ -13,9 +13,9 @@ class NewGame extends React.Component {
     render() {
         let gameList = this.state.gameData.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
         return (
-            <div className='mainWrapper_Group'>
+            <div className='main-wrapper-group'>
                 <p>New games</p>
-                <div className='WrapperGame_Group_grid'>
+                <div className='main-wrapper-group-grid'>
                    {gameList}
                 </div>
             </div>

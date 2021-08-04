@@ -2,7 +2,7 @@ import React from 'react';
 
 import PropTypes from 'prop-types';
 
-import Star from './elements/star'
+import Star from './elemenst/star'
 
 class GameCard extends React.Component {
     render () {
@@ -10,14 +10,20 @@ class GameCard extends React.Component {
         let stars = [...Array(starCounter)].map((i) => <Star key={i}/>)
         
         return (
-            <div className='gameCard'>
-                <div><img src={this.props.gameData.imgGame} alt="" /></div>
-                <div className='gameDescription'>
-                    <h1>{this.props.gameData.gameName}</h1>
-                    <p>price: {this.props.gameData.priceGame}{this.props.gameData.currency}</p>
+            <div className='game-card-wrapper'>
+                <div className='game-description'>
                     <p>description: {this.props.gameData.discription}</p>
-                    <p>age: {this.props.gameData.age}</p>
-                    <div className='star-game-rate'>{stars}</div >
+                    <p>{this.props.gameData.age}</p>
+                </div>
+                <div className='game-card'>
+                    <div><img src={this.props.gameData.imgGame} alt="" /></div>
+                    <div className='game-pice-and-name'>
+                        <div className='row'>
+                            <p>{this.props.gameData.gameName}</p>
+                            <p>{this.props.gameData.priceGame}{this.props.gameData.currency}</p>
+                        </div>
+                        <div className='star-game-rate'>{stars}</div >
+                    </div>
                 </div>
             </div>
         )
