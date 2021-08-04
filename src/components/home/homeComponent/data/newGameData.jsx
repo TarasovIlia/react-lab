@@ -15,7 +15,7 @@ const NewGameData = [
         priceGame : '23.99',
         currency : '$',
         discription : 'lorem',
-        stars : 5,
+        stars : 4,
         age : '12+',
         key : 2
     },
@@ -25,7 +25,7 @@ const NewGameData = [
         priceGame : '25.99',
         currency : '$',
         discription : 'lorem',
-        stars : 5,
+        stars : 4,
         age : '3+',
         key : 3
     },

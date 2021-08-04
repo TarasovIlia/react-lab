@@ -26,3 +26,8 @@
 
     margin-right: 60px;
 }
+
+.dropList {
+    position: absolute;
+    background-color: rgb(34, 34, 34);
+}

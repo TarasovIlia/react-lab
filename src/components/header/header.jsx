@@ -1,5 +1,5 @@
-import React, { Component} from 'react'
-import { Link } from 'react-router-dom'
+import React, { Component} from 'react';
+import { Link } from 'react-router-dom';
 
 import NavigationData from '../data/navigationData'
 
@@ -10,8 +10,8 @@ const StyleForBtn =  { borderBottom : ButtonStyleActive }
 
 
 export default class Header extends Component {
-    constructor(props) {
-        super(props)
+    constructor() {
+        super()
         this.state = {
             data : NavigationData,
         }
@@ -20,7 +20,9 @@ render () {
     let host = window.location.pathname;
     host = host.split("/")[1]
 
-        const navigation = this.state.data.map(data  => <Link key={data.key} to={data.href}><button style={ host === data.title ? StyleForBtn : null } className="link-btn"><p>{data.title}</p></button></Link>)
+        const navigation = this.state.data.map(data  => <Link key={data.key} to={data.href}><button style={ host === data.title ? StyleForBtn : null } className="link-btn"><p>{data.title}</p></button>
+        </Link>)
+        
         return (
                 <header className="header">
                     <h1>Games Market</h1>
