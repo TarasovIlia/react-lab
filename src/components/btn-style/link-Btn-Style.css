@@ -15,3 +15,11 @@
     background-color: rgb(73, 73, 73);
     transition-duration: 0.2s;
 }
+
+.categories-link {
+    
+}
+
+.categories-link p {
+    font-size: 16px;
+}

@@ -1,13 +1,10 @@
 import React, { Component} from 'react';
-import { Link } from 'react-router-dom';
+
 
 import NavigationData from '../data/navigationData'
+import NavigationButton from '../button/navigationButton'
 
 import '../style/headerStyle.css'
-
-const ButtonStyleActive = "solid 5px blueviolet"
-const StyleForBtn =  { borderBottom : ButtonStyleActive } 
-
 
 export default class Header extends Component {
     constructor() {
@@ -17,17 +14,14 @@ export default class Header extends Component {
         }
     }
 render () {
-    let host = window.location.pathname;
-    host = host.split("/")[1]
 
-        const navigation = this.state.data.map(data  => <Link key={data.key} to={data.href}><button style={ host === data.title ? StyleForBtn : null } className="link-btn"><p>{data.title}</p></button>
-        </Link>)
+        const navigation = this.state.data.map(data  => <NavigationButton key={data.key} href={data.href} title={data.title}  link={data.link}/>)
         
         return (
                 <header className="header">
                     <h1>Games Market</h1>
                     <div className="nav_bar">
-                        {navigation}
+                    {navigation}
                     </div>
                 </header>
         )
