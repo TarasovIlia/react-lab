@@ -1,25 +1,29 @@
 import React from 'react';
+import PropTypes from 'prop-types';
 
 import GameCard from './gameCard'
 import NewGameData from './data/newGameData'
 
-class NewGame extends React.Component {
+export default class NewGame extends React.Component {
     constructor() {
         super()
         this.state = {
             gameData : NewGameData
         }
     }
-    render() {
-        let gameList = this.state.gameData.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
+    render(props) {
+        const searchResult = this.props.seacrh
+        let gameList = this.state.gameData.map(gameData =>  <GameCard key={gameData.key} gameData={gameData} name={gameData.gameName}/>)
         return (
             <div className='main-wrapper-group'>
-                <p>New games</p>
+                <p>{ this.props.seacrh ? null : 'New games' }</p>
                 <div className='main-wrapper-group-grid'>
-                   {gameList}
+                   {searchResult ? gameList.filter(function(item) {searchResult === item}) : gameList}
                 </div>
             </div>
         )
     }
 }
-export default NewGame; 
+NewGame.propTypes = {
+    seacrh: PropTypes.any,
+  };
