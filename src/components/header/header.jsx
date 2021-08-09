@@ -4,8 +4,6 @@ import React, { Component} from 'react';
 import NavigationData from '../data/navigationData'
 import NavigationButton from '../button/navigationButton'
 
-import '../style/headerStyle.css'
-
 export default class Header extends Component {
     constructor() {
         super()
@@ -15,7 +13,7 @@ export default class Header extends Component {
     }
 render () {
 
-        const navigation = this.state.data.map(data  => <NavigationButton key={data.key} href={data.href} title={data.title}  link={data.link}/>)
+        const navigation = this.state.data.map(data  => <NavigationButton key={data.key} item={data.categories} data={data}/>)
         
         return (
                 <header className="header">

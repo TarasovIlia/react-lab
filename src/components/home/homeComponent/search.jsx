@@ -1,13 +1,16 @@
-import React from 'react';
+import React, { useState } from 'react';
 
-class Search extends React.Component {
-    constructor() {
-        super()
+
+export default function Search (){
+    const [value, setValue] = useState('')
+
+    function handlChange(e) {
+        setValue(e.target.value)
     }
-    render() {
         return (
-                <input className='searchInput' type='text' placeholder='search..' />
+            <div>
+                <input onChange={handlChange} className='searchInput' type='text' placeholder='search..' />
+                <p>{value}</p>
+            </div>
         )
-    }
 }
-export default Search; 

@@ -2,14 +2,14 @@ import React, { Component } from 'react';
 
 import { Route, Redirect, withRouter, Switch } from "react-router-dom";
 
-import './App.css';
-import './components/btn-style/link-Btn-Style.css';
-
 import Home from './components/home/Home'
 import About from './components/about/About'
 import Products from './components/products/Products'
 import Header from './components/header/header'
 import Footer from './components/footer/Footer'
+import PcComponetns from './components/categries/PC/PcComponent';
+import Playstation5Componetns from './components/categries/Playstation5/Playstation5';
+import XboxOneComponetns from './components/categries/XboxOne/XboxOneComponents';
 
 
 
@@ -31,7 +31,7 @@ class App extends Component  {
 
     if (this.state.error) {
       console.error()
-      window.location.pathname = "http://localhost:3000/home"
+      // window.location.pathname = "http://localhost/home"
       return (
         <h1>что то пошло не так</h1>
       );
@@ -46,6 +46,9 @@ class App extends Component  {
               <Route history={history} path='/about' component={About} />
               <Route history={history} path='/home' component={Home} />
               <Route history={history} path='/products' component={Products} />
+              <Route history={history} path='/PC' component={PcComponetns} />
+              <Route history={history} path='/Playstation5' component={Playstation5Componetns} />
+              <Route history={history} path='/XboxOne' component={XboxOneComponetns} />
             </div>
           </Switch>
           <Footer />

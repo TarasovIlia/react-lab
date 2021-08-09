@@ -1,7 +1,8 @@
-.ProductWrapper {
+@import '../style/components/variables.scss';
+.AboutWrapper {
     width: 100%;
     height: 100vh;
-    background-color: rgb(201, 228, 129);
+    background-color: $colorBackGround;
 
     display: flex;
     justify-content: center;

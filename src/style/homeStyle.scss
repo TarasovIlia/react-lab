@@ -1,7 +1,8 @@
+@import '../style/components/variables.scss';
 .HomeWrapper {
     width: 100%;
     height: auto;
-    background-color: rgb(56, 56, 56);
+    background-color: $colorBackGround;
     display: flex;
     flex-direction: column;
     align-items: center;

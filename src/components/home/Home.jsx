@@ -1,14 +1,10 @@
 import React from 'react';
 
-import '../style/homeStyle.css'
-import './homeComponent/style/categoriesStyle.css'
-import './homeComponent/style/newGameStyle.css'
-
 import Search from './homeComponent/search'
 import NewGame from './homeComponent/newGame'
 import Categories from './homeComponent/categories'
 
-function Home () {
+export default function Home (props) {
     return (
         <div className="HomeWrapper">
             <Search />
@@ -17,5 +13,3 @@ function Home () {
         </div>
     )
 }
-
-export default Home

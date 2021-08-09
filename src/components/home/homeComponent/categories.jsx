@@ -13,7 +13,7 @@ class Categories extends React.Component {
     }
     
     render() {
-        let categoriesList = this.state.datasCategories.map(categories => <CategoriesCards key={categories.key} name={categories.categoriesName} img={categories.imgOfCategoty}/>)
+        let categoriesList = this.state.datasCategories.map(categories => <CategoriesCards key={categories.key} link={categories.link} name={categories.categoriesName} img={categories.imgOfCategoty}/>)
         return (
             <div className='main-wrapper-group'>
                <p>Categories</p>
