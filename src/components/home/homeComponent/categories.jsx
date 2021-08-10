@@ -2,7 +2,6 @@ import React, { useState, useEffect} from 'react';
 
 import CategoriesCards from './categoriesCards';
 
-import CategoriesData from './data/categoriesData';
 
 export default function Categories ()  {
     const [items, setItems] = useState([]);
@@ -10,7 +9,7 @@ export default function Categories ()  {
     const [isLoaded, setIsLoaded] = useState(false);
 
     useEffect(() => {
-        fetch('http://localhost:3000/cat')
+        fetch('http://localhost:3000/CategoriesData')
           .then(res => res.json())
           .then(
             (result) => {
@@ -24,9 +23,10 @@ export default function Categories ()  {
           )
       }, [])
     
-    console.log(items)
-        
-    const categoriesList = CategoriesData.map(categories => <CategoriesCards key={categories.key} link={categories.link} name={categories.categoriesName} img={categories.imgOfCategoty}/>)
+    const categoriesList = items.map(categories => <CategoriesCards key={categories.key} link={categories.link} name={categories.categoriesName} img={categories.imgOfCategoty}/>)
+    if (isLoaded) {
+      return <h5>KEK</h5>
+    }
     return (
         <div className='main-wrapper-group'>
            <p>Categories</p>

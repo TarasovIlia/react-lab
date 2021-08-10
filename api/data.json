@@ -1,21 +1,150 @@
 {
-    "people": [
+    "CategoriesData" : [
         {
-            "name" : "Ilya",
-            "age" : "24"
-         
+            "categoriesName" : "PC",
+            "imgOfCategoty" : "https://img.icons8.com/ios-filled/500/000000/microsoft.png",
+            "link" : "PC",
+            "key" : 1
         },
         {
-            "name" : "Anna",
-            "age" : "20"
+            "categoriesName" : "Xbox One",
+            "imgOfCategoty" : "https://img.icons8.com/ios-filled/500/000000/xbox.png",
+            "link" : "XboxOne",
+            "key" : "2"
+        },
+        {
+            "categoriesName" : "Playstation 5",
+            "imgOfCategoty" : "https://img.icons8.com/ios-filled/500/000000/play-station.png",
+            "link" : "Playstation5",
+            "key" : "3"
         }
     ],
-    "cat": [
+    "NewGameData" : [
         {
-            "name" : "cubrick",
-            "age" : "2"
-         
+            "gameName" : "Minecraft",
+            "imgGame" : "https://www.goha.ru/s/A:MZ/NN/4S5qEhEjxq.jpg",
+            "priceGame" : "29.99",
+            "currency" : "$",
+            "discription" : "lorem",
+            "stars" : "5",
+            "age" : "6+",
+            "key" : "1",
+            "platform" : [
+                {
+                    "Xbox One" : "true"
+                },
+                {
+                    "Playstation 5" : "true"
+                },
+                {
+                    "PC" : "true"
+                }
+            ]
+        },
+        {
+            "gameName" : "Owerwatch",
+            "imgGame" : "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
+            "priceGame" : "23.99",
+            "currency" : "$",
+            "discription" : "lorem",
+            "stars" : "4",
+            "age" : "12+",
+            "key" : "2",
+            "platform" : [
+                {
+                    "Xbox One" : "true"
+                },
+                {
+                    "Playstation 5" : "falce"
+                },
+                {
+                    "PC" : "true"
+                }
+            ]
+        },
+        {
+            "gameName" : "Terraria",
+            "imgGame" :"https://cdn.cloudflare.steamstatic.com/steam/apps/105600/capsule_616x353.jpg?t=1590092560",
+            "priceGame" : "25.99",
+            "currency" : "$",
+            "discription" : "lorem",
+            "stars" : "4",
+            "age" : "3+",
+            "key" : "3",
+            "platform" : [
+                {
+                    "Xbox One" : "falce"
+                },
+                {
+                    "Playstation 5" : "true"
+                },
+                {
+                    "PC" : "true"
+                }
+            ]
+        },
+        {
+            "gameName" : "Grand Theft Auto V",
+            "imgGame" : "https://upload.wikimedia.org/wikipedia/ru/c/c8/GTAV_Official_Cover_Art.jpg",
+            "priceGame" : "35.99",
+            "currency" : "$",
+            "discription" : "lorem",
+            "stars" : "5",
+            "age" : "16+",
+            "key" : "4",
+            "platform" : [
+                {
+                    "Xbox One" : "true"
+                },
+                {
+                    "Playstation 5" : "true"
+                },
+                {
+                    "PC" : "true"
+                }
+            ]
+        },
+        {
+            "gameName" : "God of War 4",
+            "imgGame" : "https://upload.wikimedia.org/wikipedia/ru/5/5a/God_of_War_2018_cover.jpg",
+            "priceGame" : "49.99",
+            "currency" : "$",
+            "discription" : "lorem",
+            "stars" : "5",
+            "age" : "16+",
+            "key" : "5",
+            "platform" : [
+                {
+                    "Xbox One" : "false"
+                },
+                {
+                    "Playstation 5" : "true"
+                },
+                {
+                    "PC" : "false"
+                }
+            ]
+        },
+        {
+            "gameName" : "Deus Ex: Mankind Divided",
+            "imgGame" : "https://upload.wikimedia.org/wikipedia/ru/a/a2/Deus_Ex_Mankind_Divided_cover.jpg",
+            "priceGame" : "26.99",
+            "currency" : "$",
+            "discription" : "lorem",
+            "stars" : "4",
+            "age" : "16+",
+            "key" : "6",
+            "platform" : [
+                {
+                    "Xbox One" : "true"
+                },
+                {
+                    "Playstation 5" : "true"
+                },
+                {
+                    "PC" : "true"
+                }
+            ]
         }
-    ] 
-
+    ]
 }
