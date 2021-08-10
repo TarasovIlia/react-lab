@@ -1,0 +1,21 @@
+{
+    "people": [
+        {
+            "name" : "Ilya",
+            "age" : "24"
+         
+        },
+        {
+            "name" : "Anna",
+            "age" : "20"
+        }
+    ],
+    "cat": [
+        {
+            "name" : "cubrick",
+            "age" : "2"
+         
+        }
+    ] 
+
+}
