@@ -13,9 +13,6 @@ const NavigationData = [
      href: 'products', 
      title: 'products',
      key: 3,
-     link: 'PC',
-     link2: 'Playstation5',
-     link3: 'XboxOne',
      categories : [
         { name : 'PC', link : 'PC', key : 1 },
         { name : 'Playstation 5', link : 'Playstation5', key : 2 },

@@ -21,7 +21,8 @@
 }
 
 .link {
-    transition-duration: 0.2s;
+    transition-duration: 0.4s;
+    background-color: rgb(34, 34, 34);
     position: absolute;
     display: flex;
     flex-direction: column;
@@ -29,7 +30,7 @@
     right: 64px;
     z-index: 1;
     p {
-        padding: 20px 16px;
+        padding: 20px 13px;
         &:hover {
             color: blueviolet;
         }
