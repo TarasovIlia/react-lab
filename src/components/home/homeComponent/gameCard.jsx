@@ -7,7 +7,7 @@ import Star from './elemenst/star'
 class GameCard extends React.Component {
     render () {
         let starCounter = this.props.gameData.stars
-        let stars = [...Array(starCounter)].map((i) => <Star key={i}/>)
+        let stars = [...Array(parseInt(starCounter))].map((i) => <Star key={i}/>)
         
         return (
             <div className='game-card-wrapper'>
@@ -16,7 +16,7 @@ class GameCard extends React.Component {
                     <div className='game-price-and-name'>
                         <div className='row'>
                             <p>{this.props.gameData.gameName}</p>
-                            <p>{this.props.gameData.priceGame}{this.props.gameData.currency}</p>
+                            <p>{this.props.gameData.priceGame} {this.props.gameData.currency}</p>
                         </div>
                         <div className='star-game-rate'>{stars}</div >
                     </div>

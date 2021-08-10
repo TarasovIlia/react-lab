@@ -2,7 +2,6 @@ import React, { useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
 import GameCard from './gameCard'
-import NewGameData from './data/newGameData'
 
 export default function NewGame(props) {
     const [data, setItems] = useState([]);
