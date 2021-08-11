@@ -14,7 +14,6 @@ export default function NewGame(props) {
           .then(
             (result) => {
               setItems(result);
-              setItems(result);
             },
             (error) => {
                 setIsLoaded(true);
@@ -22,14 +21,15 @@ export default function NewGame(props) {
               }
           )
       }, [])
-
-    const searchResult = props.seacrh
-    const gameList = data.map(gameData =>  <GameCard key={gameData.key} gameData={gameData} name={gameData.gameName}/>)
+    const searchAction = props.seacrh  
+    const searchMatch = data.filter(word => word.gameName.toLowerCase().match(searchAction.trim()));
+    const searchResult = searchMatch.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
+    const gameList = data.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
     return (
-        <div className='main-wrapper-group'>
-            <p>{ props.seacrh ? null : 'New games' }</p>
+        <div className='main-wrapper-group main-wrapper-underline'>
+            <p>{ searchAction ? 'Result:' : 'New games' }</p>
             <div className='main-wrapper-group-grid'>
-           {searchResult ? gameList.filter(function(item) {searchResult === item}) : gameList}
+           {searchAction ? searchResult : gameList}
             </div>
         </div>
     )

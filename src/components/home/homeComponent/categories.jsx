@@ -28,7 +28,7 @@ export default function Categories ()  {
       return <h5>KEK</h5>
     }
     return (
-        <div className='main-wrapper-group'>
+        <div className='main-wrapper-group main-wrapper-underline'>
            <p>Categories</p>
            <div className='main-wrapper-group-grid-categories'>{categoriesList}</div>
         </div>

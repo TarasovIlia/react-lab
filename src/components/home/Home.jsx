@@ -14,7 +14,7 @@ export default function Home() {
     const categories = <Categories />;
     return (
         <div className="HomeWrapper">
-            <Search onChange={handlChange}/>
+            <Search seacrh={ seacrh } onChange={handlChange}/>
             {seacrh ? null : categories}
             <NewGame seacrh={ seacrh }/>
         </div>

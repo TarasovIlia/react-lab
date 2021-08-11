@@ -16,6 +16,7 @@
   "scripts": {
     "lint": "husky install",
     "start": "set PORT=3006 && react-scripts start",
+    "json-server" : "json-server api/data.json",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject",

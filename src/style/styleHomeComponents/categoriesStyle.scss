@@ -3,8 +3,10 @@
     height: auto;
     position: relative;
     margin-top: 50px;
+
+    padding-bottom: 50px;
 }
-.main-wrapper-group::before {
+.main-wrapper-underline::before {
     content: '';
     position: absolute;
     width: 100%;

@@ -16,19 +16,44 @@
     box-shadow: none;
     outline-offset: 0;
 
+    background-color: #fff;
+
     border-radius: 22px;
     padding: 13px;
     margin-top: 20px;
     width: 640px;
-    background: none;
     transition-duration: 0.2s;
     font-size: 18px;
-    opacity: 0.8;
+    position: relative;
+    z-index: 2;
+    
+}
+.search-help {
+    position: absolute;
+    
+    p {
+        font-size: 18px;
+        color: #000;
+        border-radius: 22px;
+        padding: 10px;
+        margin-top: 3px;
+        &:hover {
+            background-color: blueviolet;
+            cursor: pointer;
+        }
+    }
+    width: 100%;
+    background-color: #fff;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    padding: 25px 3px 13px 3px;
+    margin-top: -20px;
+
+    z-index: 1;
 }
 .searchInput:focus {
     border: solid 3px blueviolet;
     background-color: #fff;
     width: 740px;
     transition-duration: 0.2s;
-    opacity: 1;
 }
