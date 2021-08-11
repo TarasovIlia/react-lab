@@ -29,17 +29,13 @@
             "stars" : "5",
             "age" : "6+",
             "key" : "1",
-            "platform" : [
-                {
-                    "Xbox One" : "true"
-                },
-                {
-                    "Playstation 5" : "true"
-                },
-                {
-                    "PC" : "true"
-                }
-            ]
+            "platform" : 
+                   { 
+                    "Xbox One" : true,
+                    "Playstation 5" : true,
+                    "PC" : true
+                    }
+            
         },
         {
             "gameName" : "Owerwatch",
@@ -50,17 +46,12 @@
             "stars" : "4",
             "age" : "12+",
             "key" : "2",
-            "platform" : [
-                {
-                    "Xbox One" : "true"
-                },
-                {
-                    "Playstation 5" : "falce"
-                },
-                {
-                    "PC" : "true"
-                }
-            ]
+            "platform" : 
+                   { 
+                    "Xbox One" : false,
+                    "Playstation 5" : false,
+                    "PC" : true
+                    }
         },
         {
             "gameName" : "Terraria",
@@ -71,17 +62,12 @@
             "stars" : "4",
             "age" : "3+",
             "key" : "3",
-            "platform" : [
-                {
-                    "Xbox One" : "falce"
-                },
-                {
-                    "Playstation 5" : "true"
-                },
-                {
-                    "PC" : "true"
-                }
-            ]
+            "platform" : 
+                   { 
+                    "Xbox One" : true,
+                    "Playstation 5" : true,
+                    "PC" : true
+                    }
         },
         {
             "gameName" : "Grand Theft Auto V",
@@ -92,17 +78,12 @@
             "stars" : "5",
             "age" : "16+",
             "key" : "4",
-            "platform" : [
-                {
-                    "Xbox One" : "true"
-                },
-                {
-                    "Playstation 5" : "true"
-                },
-                {
-                    "PC" : "true"
-                }
-            ]
+            "platform" : 
+                   { 
+                    "Xbox One" : true,
+                    "Playstation 5" : true,
+                    "PC" : true
+                    }
         },
         {
             "gameName" : "God of War 4",
@@ -113,17 +94,12 @@
             "stars" : "5",
             "age" : "16+",
             "key" : "5",
-            "platform" : [
-                {
-                    "Xbox One" : "false"
-                },
-                {
-                    "Playstation 5" : "true"
-                },
-                {
-                    "PC" : "false"
-                }
-            ]
+            "platform" : 
+                   { 
+                    "Xbox One" : false,
+                    "Playstation 5" : true,
+                    "PC" : false
+                    }
         },
         {
             "gameName" : "Deus Ex: Mankind Divided",
@@ -134,17 +110,60 @@
             "stars" : "4",
             "age" : "16+",
             "key" : "6",
-            "platform" : [
-                {
-                    "Xbox One" : "true"
-                },
-                {
-                    "Playstation 5" : "true"
-                },
-                {
-                    "PC" : "true"
-                }
-            ]
+            "platform" : 
+                   { 
+                    "Xbox One" : false,
+                    "Playstation 5" : true,
+                    "PC" : true
+                    }
+        },
+        {
+            "gameName" : "Assassin's Creed Valhalla",
+            "imgGame" : "https://upload.wikimedia.org/wikipedia/ru/2/26/AC_Valhalla_standard_edition.jpg",
+            "priceGame" : "31.99",
+            "currency" : "$",
+            "discription" : "lorem",
+            "stars" : "4",
+            "age" : "12+",
+            "key" : "7",
+            "platform" : 
+                   { 
+                    "Xbox One" : true,
+                    "Playstation 5" : true,
+                    "PC" : true
+                    }
+        },
+        {
+            "gameName" : "UFC 4",
+            "imgGame" : "https://image.api.playstation.com/vulcan/img/rnd/202102/0809/fkloHdJYS5wJzwFUfdGyRqPi.png",
+            "priceGame" : "22.99",
+            "currency" : "$",
+            "discription" : "lorem",
+            "stars" : "3",
+            "age" : "14+",
+            "key" : "8",
+            "platform" : 
+                   { 
+                    "Xbox One" : false,
+                    "Playstation 5" : true,
+                    "PC" : false
+                    }
+        },
+        {
+            "gameName" : "Call of Duty Black Ops 4",
+            "imgGame" : "https://www.digiseller.ru/preview/376679/p1_2646374_644123fd.jpg",
+            "priceGame" : "33.99",
+            "currency" : "$",
+            "discription" : "lorem",
+            "stars" : "4",
+            "age" : "16+",
+            "key" : "9",
+            "platform" : 
+                   { 
+                    "Xbox One" : true,
+                    "Playstation 5" : true,
+                    "PC" : true
+                    }
         }
     ],
     "NavigationData" : [

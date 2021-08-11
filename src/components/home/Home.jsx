@@ -13,7 +13,7 @@ export default function Home() {
     }
     const categories = <Categories />;
     return (
-        <div className="HomeWrapper">
+        <div className="home-wrapper">
             <Search seacrh={ seacrh } onChange={handlChange}/>
             {seacrh ? null : categories}
             <NewGame seacrh={ seacrh }/>
