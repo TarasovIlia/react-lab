@@ -54,7 +54,7 @@
 }
 
 
-.searchInput {
+.search-input {
     outline: none;
     border: solid 3px #fff;
     box-shadow: none;
@@ -96,9 +96,11 @@
 
     z-index: 1;
 }
-.searchInput:focus {
-    border: solid 3px blueviolet;
-    background-color: #fff;
-    width: 740px;
-    transition-duration: 0.2s;
+.main-page{
+    &:focus {
+        border: solid 3px blueviolet;
+        background-color: #fff;
+        width: 740px;
+        transition-duration: 0.2s;
+    }
 }

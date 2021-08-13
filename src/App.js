@@ -1,4 +1,7 @@
-import React, { Component } from 'react';
+const modalSingUp = document.getElementById('modal-sign-up')
+
+import React, { Component, useState } from 'react';
+import ReactDOM from 'react-dom';
 
 import { Route, Redirect, withRouter, Switch } from "react-router-dom";
 
@@ -10,36 +13,17 @@ import Footer from './components/footer/Footer'
 import PcComponetns from './components/categries/PC/PcComponent';
 import Playstation5Componetns from './components/categries/Playstation5/Playstation5';
 import XboxOneComponetns from './components/categries/XboxOne/XboxOneComponents';
+import ModalSignUp from './components/modalWindow/modalSignUp';
 
 
 
-class App extends Component  {
-  constructor(props) {
-    super(props)
-    this.state = { error : null }
-  }
-
-  componentDidCatch(error) {
-    this.setState({
-      error: error,
-    })
-  }
-  
-
-  render() {
-    const history  = this.props
-
-    if (this.state.error) {
-      console.error()
-      // window.location.pathname = "http://localhost/home"
-      return (
-        <h1>что то пошло не так</h1>
-      );
-    }
-
-    return (
+function App (){
+  const [modalState, setModal] = useState(false)
+  const closeModal = () => modalState  ? setModal(false) : setModal(true)
+return (
+    <div>
       <div className="mainWrapper">
-          <Header />
+          <Header onClick={closeModal}/>
           <Switch>
             <div className="content">
               <Redirect from='/' to='/home'/>
@@ -53,8 +37,14 @@ class App extends Component  {
           </Switch>
           <Footer />
       </div>
-    );
-  }
+      <main>
+       {modalState && ReactDOM.createPortal (
+          <ModalSignUp onClick={closeModal}/>,
+          modalSingUp
+        )}
+      </main>
+    </div>
+  );
 }
 
 export default withRouter(App);
