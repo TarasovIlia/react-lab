@@ -1,0 +1,39 @@
+import React, { useState, useEffect} from 'react';
+import PropTypes from 'prop-types';
+
+import GameCard from './gameCard'
+
+export default function NewGame(props) {
+    const [data, setItems] = useState([]);
+    const [error, setError] = useState(null);
+    const [isLoaded, setIsLoaded] = useState(false);
+
+    useEffect(() => {
+        fetch('http://localhost:3000/NewGameData')
+          .then(res => res.json())
+          .then(
+            (result) => {
+              setItems(result);
+            },
+            (error) => {
+                setIsLoaded(true);
+                setError(error);
+              }
+          )
+      }, [])
+    const searchAction = props.seacrh  
+    const searchMatch = data.filter(word => word.gameName.toLowerCase().match(searchAction.trim()));
+    const searchResult = searchMatch.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
+    const gameList = data.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
+    return (
+        <div className='main-wrapper-group main-wrapper-underline'>
+            <p>{ searchAction ? 'Result:' : 'New games' }</p>
+            <div className='main-wrapper-group-grid'>
+           {searchAction ? searchResult : gameList}
+            </div>
+        </div>
+    )
+}
+NewGame.propTypes = {
+    seacrh: PropTypes.any,
+  };

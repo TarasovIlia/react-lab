@@ -1,0 +1,73 @@
+.main-wrapper-group-grid {
+    width: 90%;
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr 1fr;
+    grid-column-gap: 100px;
+    grid-row-gap: 40px;
+    
+    margin: 0px auto;
+    position: relative;
+}
+.star-game-rate {
+    float: left;
+}
+.game-card.front{
+    
+    .game-price-and-name {
+        width: 100%;
+        position: absolute;
+        bottom: 0px;
+        background-color: rgba(0, 0, 0, 0.575);
+        padding: 40px 16px;
+    }
+}
+.game-card-wrapper {
+    perspective: 1000px;
+    height: 500px;
+    max-width: 40vw;
+}
+.game-card-wrapper:hover  .game-card.front{
+    transform: rotateY(180deg);
+    transition-duration: 1.2s;
+    z-index: 1;
+}
+.game-card-wrapper:hover  .game-card.back{
+    transform: rotateY(0deg);
+    transition-duration: 1.2s;
+    z-index: 2;
+    opacity: 1;
+}
+
+.game-card {
+    position: absolute;
+    top: 0px;
+    left: 0px;
+    
+    margin-top: 60px;
+    width: 100%;
+    height: 100%;
+    
+    border-radius: 22px;
+    border: solid 2px blueviolet;
+    background-color: #000;
+    backface-visibility: hidden;
+    
+    transition-duration: 1.2s;
+    
+    cursor: pointer;
+    overflow: hidden;
+    img {
+        width: 100%;
+        
+    }
+}
+
+.game-card.back {
+    transform: rotateY(-180deg);
+    padding: 16px;
+}
+
+.row {
+    display: flex;
+    justify-content: space-between;
+}
