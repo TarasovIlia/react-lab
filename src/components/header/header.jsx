@@ -6,6 +6,7 @@ import NavigationData from '../data/navigationData'
 
 export default function Header ( {onClick} ) {
     const [data, setItems] = useState([]);
+    const [User, setUser] = useState('');
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
 
@@ -21,12 +22,31 @@ export default function Header ( {onClick} ) {
                 setIsLoaded(true);
                 setError(error);
               }
-          )
+          ),
+          fetch('http://localhost:3000/User/1')
+          .then(res => res.json())
+          .then(
+            (result) => setUser(result.email))
       }, [])
 
+    const LogOut = () => {
+        const requestOptions = {
+            method: 'PUT',
+            headers: { 'Content-Type': 'application/json' },
+            body: JSON.stringify({
+                email : '',
+                password : ''
+            })
+        };
+        fetch('http://localhost:3000/User/1', requestOptions);
+        window.location.pathname = '/'
+    }
 
     const ButtonStyleActive = "solid 5px blueviolet";
+    const ButtonProfileStyleActive = "solid 2px blueviolet";
+
     const StyleForBtn =  { borderBottom : ButtonStyleActive }
+    const StyleForProfileBtn = { border : ButtonProfileStyleActive }
 
     let host = window.location.pathname;
     host = host.split("/")[1]
@@ -48,13 +68,11 @@ export default function Header ( {onClick} ) {
         </Link>)
 
 
-const userDidntSignUn = <p>sign up</p>
-const userSignInProfile = <p>User Name</p> //KEK
-const userSignIn = false //true or false
+const userDidntSignUp = <p>sign up</p>
+const userSignInProfile = <div>
+        <Link to="profile"><p style={host === "profile" ? StyleForProfileBtn : null}>{User}</p></Link>
+    </div>
 
-function kek() {
-    alert('вы не KEK')
-}
 const disablePosition = '-400px' 
 const activePosition = '70px';
 
@@ -73,8 +91,8 @@ let [linkClassName, setTopPosition] = useState(disablePosition)
                         }}>                           
                         {navigationCategories}
                     </div>
-                    <button className="link-btn sign-up-button" onClick={ userSignIn ? kek : onClick }>{userSignIn ? userSignInProfile : userDidntSignUn}</button>
-                    { userSignIn || <button className="link-btn sign-up-button" onClick={ onClick }><p>sign in</p></button>}
+                    <button className="link-btn sign-up-button">{User ? userSignInProfile : userDidntSignUp}</button>
+                    { User ? <button className="link-btn" onClick={ LogOut }><p>log out</p></button> : <button className="link-btn sign-up-button" onClick={ onClick }><p>sign in</p></button> }
                 </div>
             </header>
     )

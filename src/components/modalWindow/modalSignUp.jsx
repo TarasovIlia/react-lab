@@ -4,13 +4,31 @@ import PropTypes from 'prop-types';
 export default function ModalSignUp ( {onClick} ) {
     const [userEmail, setEmail] =  useState('');
     const [userPass, setPass] =  useState('');
+    const [validation, setValidation] =  useState(false);
+    const [validationPass, setValidationPass] =  useState('');
 
     const sendEmail = (e) => {
         setEmail(e.target.value)
     }
 
+    const validationPassword = (e) => {
+        setValidationPass(e.target.value);
+        if (e.target.value === userPass && userPass.length >= 5) {
+            setValidation(true)
+        }
+        else (
+            setValidation(false)
+        )
+    }
+
     const sendPassword = (e) => {
-        setPass(e.target.value)
+        setPass(e.target.value);
+        if (e.target.value.length >= 5 && e.target.value === validationPass) {
+            setValidation(true)
+        }
+        else (
+            setValidation(false)
+        )
     }
 
     const handleSubmit = (e) => {
@@ -22,10 +40,11 @@ export default function ModalSignUp ( {onClick} ) {
                                     password: userPass
         })
         };
-        fetch('http://localhost:3000/UserTest/1', requestOptions);
-        alert('great job! ' + userEmail);
+        fetch('http://localhost:3000/User/1', requestOptions);
         onClick()
+        window.location.pathname = '/'
     }
+
     return (
         <div className='wrapper-modal-window'>
             <div className='modal-window'>
@@ -36,7 +55,8 @@ export default function ModalSignUp ( {onClick} ) {
                     <form action=''>
                         <input onChange={sendEmail} className='search-input' type='email' placeholder='your e-mail' />
                         <input onChange={sendPassword} className='search-input' type='password' placeholder='your password' />
-                        <button onClick={handleSubmit} className='modal-button'><p>sign in</p></button>
+                        <input onChange={validationPassword} className='search-input' type='password' placeholder='repead password' />
+                        <button style={{ opacity : validation ? '1' : '0.2' }} onClick={ handleSubmit } className='modal-button'><p>sign in</p></button>
                     </form>
                 </div>
             </div> 

@@ -14,6 +14,7 @@ import PcComponetns from './components/categries/PC/PcComponent';
 import Playstation5Componetns from './components/categries/Playstation5/Playstation5';
 import XboxOneComponetns from './components/categries/XboxOne/XboxOneComponents';
 import ModalSignUp from './components/modalWindow/modalSignUp';
+import UserProfile from './components/user-profile/userProfile';
 
 
 
@@ -33,6 +34,7 @@ return (
               <Route history={history} path='/PC' component={PcComponetns} />
               <Route history={history} path='/Playstation5' component={Playstation5Componetns} />
               <Route history={history} path='/XboxOne' component={XboxOneComponetns} />
+              <Route history={history} path='/profile' component={UserProfile} />
             </div>
           </Switch>
           <Footer />
