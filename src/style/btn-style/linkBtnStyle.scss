@@ -36,3 +36,15 @@
         }
     }
 }
+
+.cart-btn {
+    div {
+        display: flex;
+        width: 50px;
+        justify-content: space-between;
+        align-items: center;
+        img {
+            width: 30px;
+        }
+    }
+}

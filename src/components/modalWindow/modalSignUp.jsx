@@ -82,7 +82,7 @@ export default function ModalSignUp ( {onClick} ) {
                         <input onChange={sendPassword} className='search-input' type='password' placeholder='your password' />
                         <input onChange={validationPassword} className='search-input' type='password' placeholder='repead password' />
                         <aside style={{bottom : alarmIndicator() ?  '-120px' : '0px'}} className='alarm'><p>Password mismatch!</p></aside>
-                        <button style={{ opacity : totalValidation ? '1' : '0.2' }} onClick={ handleSubmit } className='modal-button'><p>sign in</p></button>
+                        <button style={{ opacity : totalValidation ? '1' : '0.4' }} onClick={ handleSubmit } className='modal-button'><p>sign in</p></button>
                     </form>
                 </div>
             </div> 

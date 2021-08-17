@@ -67,11 +67,14 @@ export default function Header ( {onClick} ) {
             <p style={{color : host === data.link ? 'blueviolet' : null}}>{data.name}</p>
         </Link>)
 
-
+const cart = 0
 const userDidntSignUp = <p>sign up</p>
 const userSignInProfile = <div>
         <Link to="profile"><p style={host === "profile" ? StyleForProfileBtn : null}>{User}</p></Link>
     </div>
+const userSignInCart = <div> 
+            <img src='https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png' alt="" /><p>{cart}</p>
+        </div>
 
 const disablePosition = '-400px' 
 const activePosition = '70px';
@@ -91,8 +94,13 @@ let [linkClassName, setTopPosition] = useState(disablePosition)
                         }}>                           
                         {navigationCategories}
                     </div>
-                    <button className="link-btn sign-up-button">{User ? userSignInProfile : userDidntSignUp}</button>
-                    { User ? <button className="link-btn" onClick={ LogOut }><p>log out</p></button> : <button className="link-btn sign-up-button" onClick={ onClick }><p>sign in</p></button> }
+                    {User ?
+                        <button className="link-btn sign-up-button">{ userSignInProfile}</button>
+                        :
+                        <button onClick={ onClick }  className="link-btn sign-up-button">{ userDidntSignUp }</button>
+                    }
+                    {User ? <Link to="cart"><button style={host === "cart" ? StyleForBtn : null} className="link-btn cart-btn">{ userSignInCart}</button></Link> : null}
+                    { User ? <button className="link-btn" onClick={ LogOut }><img src="https://img.icons8.com/ios-glyphs/30/ffffff/exit.png"/></button> : <button className="link-btn sign-up-button" onClick={ onClick }><p>sign in</p></button> }
                 </div>
             </header>
     )
