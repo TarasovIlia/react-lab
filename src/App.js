@@ -1,9 +1,11 @@
+const modalSingIn = document.getElementById('modal-sign-in')
 const modalSingUp = document.getElementById('modal-sign-up')
 
-import React, { Component, useState } from 'react';
+import React from 'react';
 import ReactDOM from 'react-dom';
 
 import { Route, Redirect, withRouter, Switch } from "react-router-dom";
+import { useDispatch, useSelector } from 'react-redux';
 
 import Home from './components/home/Home'
 import About from './components/about/About'
@@ -13,19 +15,22 @@ import Footer from './components/footer/Footer'
 import PcComponetns from './components/categries/PC/PcComponent';
 import Playstation5Componetns from './components/categries/Playstation5/Playstation5';
 import XboxOneComponetns from './components/categries/XboxOne/XboxOneComponents';
+
 import ModalSignUp from './components/modalWindow/modalSignUp';
+import ModalSignIn from './components/modalWindow/modalSignIn';
+
 import UserProfile from './components/user-profile/userProfile';
 import Cart from './components/cart/cart'
 
 
 
 function App (){
-  const [modalState, setModal] = useState(false)
-  const closeModal = () => modalState  ? setModal(false) : setModal(true)
+  const modalUp = useSelector((state) => state.modalUp.value)
+  const modalIn = useSelector((state) => state.modalIn.value)
 return (
     <div>
       <div className="mainWrapper">
-          <Header onClick={closeModal}/>
+          <Header/>
           <Switch>
             <div className="content">
               <Redirect from='/' to='/home'/>
@@ -42,8 +47,12 @@ return (
           <Footer />
       </div>
       <main>
-       {modalState && ReactDOM.createPortal (
-          <ModalSignUp onClick={closeModal}/>,
+        {modalIn && ReactDOM.createPortal (
+          <ModalSignIn/>,
+          modalSingIn
+        )}
+        {modalUp && ReactDOM.createPortal (
+          <ModalSignUp/>,
           modalSingUp
         )}
       </main>

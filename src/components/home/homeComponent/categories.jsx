@@ -3,6 +3,8 @@ import React, { useState, useEffect} from 'react';
 import CategoriesCards from './categoriesCards';
 
 
+
+
 export default function Categories ()  {
     const [items, setItems] = useState([]);
     const [error, setError] = useState(null);

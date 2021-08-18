@@ -1,13 +1,18 @@
 import React, { useState, useEffect } from 'react'
-import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { activModalUp } from '../../features/modalUpSlice';
+import { userLogIn } from '../../features/userSlice'
 
-export default function ModalSignUp ( {onClick} ) {
+export default function ModalSignUp ( ) {
     const [userEmail, setEmail] =  useState('');
     const [userPass, setPass] =  useState('');
     const [validation, setValidation] =  useState(false);
     const [validationMail, setValidationMail] =  useState(false);
     const [totalValidation, setTotalValidation] =  useState(false);
     const [validationPass, setValidationPass] =  useState('');
+    const dispatch = useDispatch();
+    const modalUp = useSelector((state) => state.modalUp.value)
+    const user = useSelector((state) => state.user.value)
 
     useEffect(() => {
         if (validation && validationMail) {
@@ -47,20 +52,21 @@ export default function ModalSignUp ( {onClick} ) {
             setValidation(false)
         )
     }
-
     const handleSubmit = (e) => {
         e.preventDefault()
         if (totalValidation) {
             const requestOptions = {
-                method: 'PUT',
+                method: 'POST',
                 headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({  email: userEmail,
-                                        password: userPass
-            })
+                body: JSON.stringify({  
+                    email: userEmail,
+                    password: userPass
+                })
             };
-            fetch('http://localhost:3000/User/1', requestOptions);
-            onClick()
-            window.location.pathname = '/'
+            fetch('http://localhost:3000/User', requestOptions);
+            dispatch(activModalUp());
+            dispatch(userLogIn());
+
         }
     }
 
@@ -73,7 +79,7 @@ export default function ModalSignUp ( {onClick} ) {
     return (
         <div className='wrapper-modal-window'>
             <div className='modal-window'>
-            <button onClick={onClick} className='close-btn'>
+            <button onClick={() => dispatch(activModalUp())} className='close-btn'>
                 <p>close</p>
             </button>
                 <div className='input-group'>
@@ -88,9 +94,4 @@ export default function ModalSignUp ( {onClick} ) {
             </div> 
         </div>
     )
-}
-ModalSignUp.propTypes = {
-    onClick : PropTypes.any,
-    props :  PropTypes.any,
-    modalState :  PropTypes.any,
 }

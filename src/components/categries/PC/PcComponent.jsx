@@ -21,7 +21,7 @@ export default function PcComponetns () {
           )
       }, [])
     const searchMatch = data.filter(word => word.platform["PC"] === true);
-    const searchResult = searchMatch.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
+    const searchResult = searchMatch.map(gameData => <GameCard key={gameData.key} gameData={gameData}/>)
     return (
         <div className="home-wrapper">
             <div className='main-wrapper-group main-wrapper-underline'>

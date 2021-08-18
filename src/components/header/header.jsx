@@ -1,14 +1,21 @@
 import React,  { useState, Component, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
+import { useDispatch, useSelector } from 'react-redux';
+import { activModalUp } from '../../features/modalUpSlice'
+import { activModalIn } from '../../features/modalInSlice'
+import { userLogIn } from '../../features/userSlice'
 
 import NavigationData from '../data/navigationData'
 
 export default function Header ( {onClick} ) {
     const [data, setItems] = useState([]);
-    const [User, setUser] = useState('');
+    const [User, setUser] = useState('User001');
     const [error, setError] = useState(null);
     const [isLoaded, setIsLoaded] = useState(false);
+    const dispatch = useDispatch();
+    const modalUp = useSelector((state) => state.modalUp.value);
+    const user = useSelector((state) => state.user.value);
 
     useEffect(() => {
         fetch('http://localhost:3000/NavigationData')
@@ -23,24 +30,11 @@ export default function Header ( {onClick} ) {
                 setError(error);
               }
           ),
-          fetch('http://localhost:3000/User/1')
+          fetch('http://localhost:3000/User/5')
           .then(res => res.json())
           .then(
             (result) => setUser(result.email))
       }, [])
-
-    const LogOut = () => {
-        const requestOptions = {
-            method: 'PUT',
-            headers: { 'Content-Type': 'application/json' },
-            body: JSON.stringify({
-                email : '',
-                password : ''
-            })
-        };
-        fetch('http://localhost:3000/User/1', requestOptions);
-        window.location.pathname = '/'
-    }
 
     const ButtonStyleActive = "solid 5px blueviolet";
     const ButtonProfileStyleActive = "solid 2px blueviolet";
@@ -94,13 +88,17 @@ let [linkClassName, setTopPosition] = useState(disablePosition)
                         }}>                           
                         {navigationCategories}
                     </div>
-                    {User ?
+                    {user ?
                         <button className="link-btn sign-up-button">{ userSignInProfile}</button>
                         :
-                        <button onClick={ onClick }  className="link-btn sign-up-button">{ userDidntSignUp }</button>
+                        <button onClick={ () => dispatch(activModalUp()) }  className="link-btn sign-up-button">{ userDidntSignUp }</button>
                     }
-                    {User ? <Link to="cart"><button style={host === "cart" ? StyleForBtn : null} className="link-btn cart-btn">{ userSignInCart}</button></Link> : null}
-                    { User ? <button className="link-btn" onClick={ LogOut }><img src="https://img.icons8.com/ios-glyphs/30/ffffff/exit.png"/></button> : <button className="link-btn sign-up-button" onClick={ onClick }><p>sign in</p></button> }
+                    {user ? <Link to="cart"><button style={host === "cart" ? StyleForBtn : null} className="link-btn cart-btn">{ userSignInCart}</button></Link> : null}
+                    {user ? 
+                        <button className="link-btn" onClick={() => {dispatch(userLogIn()); window.location.pathname = '/'}}>
+                        <img src="https://img.icons8.com/ios-glyphs/30/ffffff/exit.png"/></button>
+                        :
+                        <button onClick={ () => dispatch(activModalIn()) } className="link-btn sign-up-button"><p>sign in</p></button> }
                 </div>
             </header>
     )
@@ -108,5 +106,3 @@ let [linkClassName, setTopPosition] = useState(disablePosition)
 Header.propTypes = {
     onClick : PropTypes.any,
 }
-
-
