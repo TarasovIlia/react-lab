@@ -6,34 +6,38 @@ import { activModalUp } from '../../features/modalUpSlice'
 import { activModalIn } from '../../features/modalInSlice'
 import { userLogIn } from '../../features/userSlice'
 
+/* eslint @typescript-eslint/no-var-requires: "off" */
+
 import NavigationData from '../data/navigationData'
 
-export default function Header ( {onClick} ) {
+export default function Header (  ) {
     const [data, setItems] = useState([]);
-    const [User, setUser] = useState('User001');
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const [userName, setUserName] = useState('User001');
     const dispatch = useDispatch();
-    const modalUp = useSelector((state) => state.modalUp.value);
-    const user = useSelector((state) => state.user.value);
+    const [user, setUserSugnIn] = useState(false) 
+    const axios = require('axios')
 
     useEffect(() => {
-        fetch('http://localhost:3000/NavigationData')
-          .then(res => res.json())
-          .then(
-            (result) => {
-              setItems(result);
-              setItems(result);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-              }
-          ),
-          fetch('http://localhost:3000/User/5')
-          .then(res => res.json())
-          .then(
-            (result) => setUser(result.email))
+        console.log(user)
+        axios.get('http://localhost:3000/NavigationData')
+            .then(function (response) {
+                setItems(response.data);
+            })
+        axios.get('http://localhost:3000/SignIn') 
+            .then(function (response) {
+              if (response.data[0]) {
+                setUserName(response.data[0].email)
+            }
+            else setUserName('')
+            
+            })
+        axios.get('http://localhost:3000/SignIn/1')
+            .then(function (response) {
+              if (response) {setUserSugnIn(true)}
+              else setUserSugnIn(false)
+            
+            })
+            
       }, [])
 
     const ButtonStyleActive = "solid 5px blueviolet";
@@ -64,7 +68,7 @@ export default function Header ( {onClick} ) {
 const cart = 0
 const userDidntSignUp = <p>sign up</p>
 const userSignInProfile = <div>
-        <Link to="profile"><p style={host === "profile" ? StyleForProfileBtn : null}>{User}</p></Link>
+        <Link to="profile"><p style={host === "profile" ? StyleForProfileBtn : null}>{userName}</p></Link>
     </div>
 const userSignInCart = <div> 
             <img src='https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png' alt="" /><p>{cart}</p>
@@ -74,6 +78,11 @@ const disablePosition = '-400px'
 const activePosition = '70px';
 
 let [linkClassName, setTopPosition] = useState(disablePosition)
+
+const LogOut = () => {
+    axios.delete('http://localhost:3000/SignIn/1')
+    window.location.pathname = '/'
+} 
 
     return (
             <header className="header">
@@ -95,7 +104,7 @@ let [linkClassName, setTopPosition] = useState(disablePosition)
                     }
                     {user ? <Link to="cart"><button style={host === "cart" ? StyleForBtn : null} className="link-btn cart-btn">{ userSignInCart}</button></Link> : null}
                     {user ? 
-                        <button className="link-btn" onClick={() => {dispatch(userLogIn()); window.location.pathname = '/'}}>
+                        <button className="link-btn" onClick={LogOut}>
                         <img src="https://img.icons8.com/ios-glyphs/30/ffffff/exit.png"/></button>
                         :
                         <button onClick={ () => dispatch(activModalIn()) } className="link-btn sign-up-button"><p>sign in</p></button> }

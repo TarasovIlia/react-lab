@@ -1,18 +1,17 @@
 import React from 'react'
-import PropTypes from 'prop-types';
 import { useEffect, useState } from 'react';
+
+/* eslint @typescript-eslint/no-var-requires: "off" */
 
 export default function UserProfile() {
     const [name, setName] = useState('')
+    const axios = require('axios')
 
     useEffect(() => {
-        fetch('http://localhost:3000/User/1')
-          .then(res => res.json())
-          .then(
-            (result) => {
-                setName(result.email);
-            }
-          )
+        axios.get('http://localhost:3000/SignIn')
+            .then(function(response) {
+                if (response.ok) {setName(response.data[0].email)}
+            })
     })
     return (
         <div>

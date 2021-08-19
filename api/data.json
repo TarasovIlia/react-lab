@@ -197,14 +197,21 @@
       "id": 1
     },
     {
-      "email": "anisimova",
-      "password": "22222",
+      "email": "KEKOLEG",
+      "password": "321321",
       "id": 2
     },
     {
-      "email": "kekkek",
-      "password": "321321",
+      "email": "kekOlga",
+      "password": "22222",
       "id": 3
+    }
+  ],
+  "SignIn": [
+    {
+      "email": "tarasav",
+      "password": "123123",
+      "id": 1
     }
   ]
 }

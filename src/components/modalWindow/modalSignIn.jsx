@@ -3,11 +3,14 @@ import { useDispatch, useSelector } from 'react-redux';
 import { activModalIn } from '../../features/modalInSlice';
 import { userLogIn } from '../../features/userSlice'
 
+/* eslint @typescript-eslint/no-var-requires: "off" */
+
 export default function ModalSignUp ( ) {
     const [userEmail, setEmail] =  useState('');
     const [userPass, setPass] =  useState('');
     const [userData, setUserData] = useState([])
     const [warningIndicator, setWarningIndicator] = useState(false)
+    const axios = require('axios')
 
     const sendEmail = (e) => {
         setEmail(e.target.value)
@@ -21,14 +24,21 @@ export default function ModalSignUp ( ) {
 
     const userAuthorization = (e) =>   {
         e.preventDefault()
-        fetch('http://localhost:3000/User')
-        .then(res => res.json())
-        .then(data => setUserData(data))
+        axios.get('http://localhost:3000/User')
+        .then(function(response)  {setUserData(response.data)})
         const userValidationEmail = userData.filter(data => data.email === userEmail)
         const userValidationPass = userData.filter(data => data.password === userPass)
         if (userValidationEmail.length === 1 && userValidationPass.length === 1) {
-            dispatch(userLogIn());
             dispatch(activModalIn());
+            axios({
+                method: 'POST',
+                url: 'http://localhost:3000/SignIn',
+                data: {
+                    email: userEmail,
+                    password: userPass
+                }
+            })
+            window.location.pathname = '/profile'
         }
         else {
             setWarningIndicator(true)

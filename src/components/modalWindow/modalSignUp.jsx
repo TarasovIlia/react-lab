@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { activModalUp } from '../../features/modalUpSlice';
 import { userLogIn } from '../../features/userSlice'
+/* eslint @typescript-eslint/no-var-requires: "off" */
 
 export default function ModalSignUp ( ) {
     const [userEmail, setEmail] =  useState('');
@@ -11,8 +12,7 @@ export default function ModalSignUp ( ) {
     const [totalValidation, setTotalValidation] =  useState(false);
     const [validationPass, setValidationPass] =  useState('');
     const dispatch = useDispatch();
-    const modalUp = useSelector((state) => state.modalUp.value)
-    const user = useSelector((state) => state.user.value)
+    const axios = require('axios')
 
     useEffect(() => {
         if (validation && validationMail) {
@@ -55,18 +55,25 @@ export default function ModalSignUp ( ) {
     const handleSubmit = (e) => {
         e.preventDefault()
         if (totalValidation) {
-            const requestOptions = {
+            axios({
                 method: 'POST',
-                headers: { 'Content-Type': 'application/json' },
-                body: JSON.stringify({  
+                url: 'http://localhost:3000/User',
+                data: {
                     email: userEmail,
                     password: userPass
-                })
-            };
-            fetch('http://localhost:3000/User', requestOptions);
+                }
+            }),
+            axios({
+                method: 'POST',
+                url: 'http://localhost:3000/SignIn',
+                data: {
+                    email: userEmail,
+                    password: userPass
+                }
+            })
+            window.location.pathname = '/profile'
             dispatch(activModalUp());
             dispatch(userLogIn());
-
         }
     }
 
