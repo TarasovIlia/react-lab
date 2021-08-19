@@ -11,6 +11,8 @@ export default function ModalSignUp ( ) {
     const [validationMail, setValidationMail] =  useState(false);
     const [totalValidation, setTotalValidation] =  useState(false);
     const [validationPass, setValidationPass] =  useState('');
+    const [emailUniqueness, setEmailUniqueness] = useState(true)
+    const [availableEmail, setAvailableEmail] = useState([])
     const dispatch = useDispatch();
     const axios = require('axios')
 
@@ -20,6 +22,19 @@ export default function ModalSignUp ( ) {
         }
         else {
             setTotalValidation(false)
+        }
+    })
+    useEffect(() => {
+        axios.get('http://localhost:3000/User')
+            .then(response => setAvailableEmail(response.data))
+            const Email = availableEmail.filter(data => data.email === userEmail)
+            
+
+        if (Email.length > 0) {
+            setEmailUniqueness(false)
+        }
+        else {
+            setEmailUniqueness(true)
         }
     })
 
@@ -52,9 +67,10 @@ export default function ModalSignUp ( ) {
             setValidation(false)
         )
     }
+
     const handleSubmit = (e) => {
         e.preventDefault()
-        if (totalValidation) {
+        if (totalValidation && emailUniqueness) {
             axios({
                 method: 'POST',
                 url: 'http://localhost:3000/User',
@@ -73,12 +89,17 @@ export default function ModalSignUp ( ) {
             })
             window.location.pathname = '/profile'
             dispatch(activModalUp());
-            dispatch(userLogIn());
         }
     }
 
     function alarmIndicator() {
         if (validation || !validationPass) {
+            return true
+        }
+        else return false
+    }
+    function alarmIndicatorEmail() {
+        if (emailUniqueness) {
             return true
         }
         else return false
@@ -95,6 +116,7 @@ export default function ModalSignUp ( ) {
                         <input onChange={sendPassword} className='search-input' type='password' placeholder='your password' />
                         <input onChange={validationPassword} className='search-input' type='password' placeholder='repead password' />
                         <aside style={{bottom : alarmIndicator() ?  '-120px' : '0px'}} className='alarm'><p>Password mismatch!</p></aside>
+                        <aside style={{bottom : alarmIndicatorEmail() ?  '-120px' : '0px'}} className='alarm'><p>This email is not available</p></aside>
                         <button style={{ opacity : totalValidation ? '1' : '0.4' }} onClick={ handleSubmit } className='modal-button'><p>sign in</p></button>
                     </form>
                 </div>

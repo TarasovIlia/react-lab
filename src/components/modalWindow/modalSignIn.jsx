@@ -29,7 +29,6 @@ export default function ModalSignUp ( ) {
         const userValidationEmail = userData.filter(data => data.email === userEmail)
         const userValidationPass = userData.filter(data => data.password === userPass)
         if (userValidationEmail.length === 1 && userValidationPass.length === 1) {
-            dispatch(activModalIn());
             axios({
                 method: 'POST',
                 url: 'http://localhost:3000/SignIn',
@@ -38,7 +37,8 @@ export default function ModalSignUp ( ) {
                     password: userPass
                 }
             })
-            window.location.pathname = '/profile'
+            dispatch(activModalIn());
+            window.location.pathname = '/'
         }
         else {
             setWarningIndicator(true)
