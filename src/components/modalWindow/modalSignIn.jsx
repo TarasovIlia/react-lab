@@ -27,7 +27,7 @@ export default function ModalSignUp ( ) {
         axios.get('http://localhost:3000/User')
         .then(function(response)  {setUserData(response.data)})
         const userValidationEmail = userData.filter(data => data.email === userEmail)
-        const userValidationPass = userData.filter(data => data.password === userPass)
+        const userValidationPass = userValidationEmail.filter(data => data.password === userPass)
         if (userValidationEmail.length === 1 && userValidationPass.length === 1) {
             axios({
                 method: 'POST',
