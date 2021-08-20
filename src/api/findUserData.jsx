@@ -1,0 +1,14 @@
+const axios = require('axios')
+import { useEffect, useState } from 'react'
+/* eslint @typescript-eslint/no-var-requires: "off" */
+export default function FIND_USER_DATA() {
+    const [data, setData] = useState([])
+    const user = localStorage.getItem("email")
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/User').then(response => setData(response.data))
+    }, [])
+    const UserData = data.filter(data => data.email === user)
+
+    return UserData
+}
