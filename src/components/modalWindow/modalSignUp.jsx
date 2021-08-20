@@ -12,7 +12,6 @@ export default function ModalSignUp ( ) {
     const [totalValidation, setTotalValidation] =  useState(false);
     const [validationPass, setValidationPass] =  useState('');
     const [emailUniqueness, setEmailUniqueness] = useState(true)
-    const [availableEmail, setAvailableEmail] = useState([])
     const dispatch = useDispatch();
     const axios = require('axios')
 
@@ -24,28 +23,30 @@ export default function ModalSignUp ( ) {
             setTotalValidation(false)
         }
     })
-    useEffect(() => {
-        axios.get('http://localhost:3000/User')
-            .then(response => setAvailableEmail(response.data))
-            const Email = availableEmail.filter(data => data.email === userEmail)
-            
 
-        if (Email.length > 0) {
-            setEmailUniqueness(false)
-        }
-        else {
+    const [data, setData] = useState([])
+
+    useEffect(() => {
+        axios.get('http://localhost:3000/User').then(response => setData(response.data))
+            const Email = data.filter(data => data.email === userEmail)
+        if (Email.length === 0) {
             setEmailUniqueness(true)
         }
-    }, [])
+        else {
+            setEmailUniqueness(false)
+        }
+
+    },)
 
     const sendEmail = (e) => {
         setEmail(e.target.value)
-        if (e.target.value.length >=5) {
+        if (e.target.value.length > 8) {
             setValidationMail(true)
         }
         else {
             setValidationMail(false)
         }
+
     }
 
     const validationPassword = (e) => {
@@ -109,7 +110,7 @@ export default function ModalSignUp ( ) {
                         <input onChange={sendPassword} className='search-input' type='password' placeholder='your password' />
                         <input onChange={validationPassword} className='search-input' type='password' placeholder='repead password' />
                         <aside style={{bottom : alarmIndicator() ?  '-120px' : '0px'}} className='alarm'><p>Password mismatch!</p></aside>
-                        <aside style={{bottom : alarmIndicatorEmail() ?  '-120px' : '0px'}} className='alarm'><p>This email is not available</p></aside>
+                        <aside style={{bottom : alarmIndicatorEmail() ?  '-120px' : '0px'}} className='alarm'><p>This email is already in use</p></aside>
                         <button style={{ opacity : totalValidation ? '1' : '0.4' }} onClick={ handleSubmit } className='modal-button'><p>sign in</p></button>
                     </form>
                 </div>

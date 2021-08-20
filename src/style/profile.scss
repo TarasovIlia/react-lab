@@ -1,0 +1,9 @@
+.profile-content-block {
+    display: flex;
+    justify-content: space-between;
+
+    section {
+        display: flex;
+        flex-direction: column;
+    }
+}
