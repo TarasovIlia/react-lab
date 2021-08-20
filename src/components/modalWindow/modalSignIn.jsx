@@ -27,16 +27,8 @@ export default function ModalSignUp ( ) {
             setUserData(response.data)
             const userValidationEmail = userData.filter(data => data.email === userEmail)
             const userValidationPass = userValidationEmail.filter(data => data.password === userPass)
-            if (userValidationEmail && userValidationPass) {
-                console.log('KEK')
-                axios({
-                    method: 'POST',
-                    url: 'http://localhost:3000/SignIn',
-                    data: {
-                        email: userEmail,
-                        password: userPass
-                    }
-                })
+            if (userValidationEmail.length === 1 && userValidationPass.length === 1) {
+                localStorage.setItem("email", userEmail)
                 dispatch(activModalIn());
                 window.location.pathname = '/'
             }

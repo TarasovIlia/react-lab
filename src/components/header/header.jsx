@@ -18,25 +18,18 @@ export default function Header (  ) {
     const axios = require('axios')
 
     useEffect(() => {
+        const userLogIn = localStorage.getItem("email")
+        if (userLogIn) {
+            setUserSugnIn(true)
+            setUserName(userLogIn)
+        }
+        else {
+            setUserSugnIn(false)
+        }
         axios.get('http://localhost:3000/NavigationData')
             .then(function (response) {
                 setItems(response.data);
             })
-        axios.get('http://localhost:3000/SignIn') 
-            .then(function (response) {
-              if (response.data[0]) {
-                setUserName(response.data[0].email)
-            }
-            else setUserName('')
-            
-            })
-        axios.get('http://localhost:3000/SignIn/1')
-            .then(function (response) {
-              if (response) {setUserSugnIn(true)}
-              else setUserSugnIn(false)
-            
-            })
-            
       }, [])
 
     const ButtonStyleActive = "solid 5px blueviolet";
@@ -79,7 +72,7 @@ const activePosition = '70px';
 let [linkClassName, setTopPosition] = useState(disablePosition)
 
 const LogOut = () => {
-    axios.delete('http://localhost:3000/SignIn/1')
+    localStorage.removeItem("email")
     window.location.pathname = '/'
 } 
 

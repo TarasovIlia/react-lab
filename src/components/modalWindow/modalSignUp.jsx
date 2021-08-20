@@ -36,7 +36,7 @@ export default function ModalSignUp ( ) {
         else {
             setEmailUniqueness(true)
         }
-    })
+    }, [])
 
     const sendEmail = (e) => {
         setEmail(e.target.value)
@@ -79,14 +79,7 @@ export default function ModalSignUp ( ) {
                     password: userPass
                 }
             }),
-            axios({
-                method: 'POST',
-                url: 'http://localhost:3000/SignIn',
-                data: {
-                    email: userEmail,
-                    password: userPass
-                }
-            })
+            localStorage.setItem("email", userEmail)
             window.location.pathname = '/profile'
             dispatch(activModalUp());
         }
