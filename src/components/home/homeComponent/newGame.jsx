@@ -11,8 +11,9 @@ export default function NewGame(props) {
 
     useEffect(() => {
       axios.get('http://localhost:3000/NewGameData')
-          .then(function(requires) {setItems(requires.data)} )
-      })
+          .then(function(responce) {
+              if (responce) setItems(responce.data)} )
+      }, [])
     const searchAction = props.seacrh  
     const searchMatch = data.filter(word => word.gameName.toLowerCase().match(searchAction.trim()));
     const searchResult = searchMatch.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)

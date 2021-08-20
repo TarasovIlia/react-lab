@@ -14,7 +14,7 @@ export default function Search ( {onChange} ){
     useEffect(() => {
         axios.get('http://localhost:3000/NewGameData')
           .then( function(require) {setItems(require.data)})
-      })
+      }, [])
     const searchMatch = data.filter(word => word.gameName.toLowerCase().match(seacrh.trim()));
     const searchResult = searchMatch.map(data => <p key={data.key}>{data.gameName}</p>)
 

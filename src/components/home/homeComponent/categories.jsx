@@ -9,8 +9,8 @@ export default function Categories ()  {
     const axios = require('axios')
     useEffect(() => {
       axios.get('http://localhost:3000/CategoriesData')
-          .then(request => setItems(request.data) )
-      })
+        .then(response => setItems(response.data))
+      }, [])
     const categoriesList = data.map(categories => <CategoriesCards key={categories.key} link={categories.link} name={categories.categoriesName} img={categories.imgOfCategoty}/>)
     return (
         <div className='main-wrapper-group main-wrapper-underline'>

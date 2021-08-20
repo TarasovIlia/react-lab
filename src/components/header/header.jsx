@@ -18,7 +18,6 @@ export default function Header (  ) {
     const axios = require('axios')
 
     useEffect(() => {
-        console.log(user)
         axios.get('http://localhost:3000/NavigationData')
             .then(function (response) {
                 setItems(response.data);
