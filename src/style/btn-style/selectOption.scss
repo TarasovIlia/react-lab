@@ -1,0 +1,59 @@
+.select-option {
+    width: 150px;
+    height: 40px;
+    .select-content {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        position: relative;
+
+        width: 100%;
+        height: 100%;
+        
+        background-color: rgb(14, 14, 14);
+        z-index: 2;
+    }
+    .option {
+        background-color: rgb(14, 14, 14);
+        transition-duration: 0.2s;
+        z-index: 1;
+        overflow: hidden;
+    }
+    p {
+        padding: 10px;
+        cursor: pointer;
+        font-size: 16px !important;
+        &:hover {
+            color: blueviolet
+        }
+    }
+}
+.fake-label {
+    cursor: pointer;
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    .arrow {
+        width: 10px;
+        height: 10px;
+        border-bottom: 3px solid #fff;
+        border-left: 3px solid #fff;
+        transform: rotate(-45deg);
+        float: right;
+        margin: 15px;
+        transition-duration: 0.2s;
+    }
+}
+.checbox {
+    position: absolute;
+    opacity: 0;
+    left: -400px;
+}
+.checbox:checked~.fake-label {
+    .arrow {
+        border-bottom: 3px solid blueviolet;
+        border-left: 3px solid blueviolet;
+        transform: rotate(-225deg);
+        transition-duration: 0.2s;
+    }
+}

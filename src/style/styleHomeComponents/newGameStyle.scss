@@ -2,8 +2,8 @@
     width: 90%;
     display: grid;
     grid-template-columns: 1fr 1fr 1fr 1fr;
-    grid-column-gap: 100px;
-    grid-row-gap: 40px;
+    grid-column-gap: 5%;
+    grid-row-gap: 2%;
     
     margin: 0px auto;
     position: relative;
@@ -23,8 +23,8 @@
 }
 .game-card-wrapper {
     perspective: 1000px;
-    height: 500px;
-    max-width: 40vw;
+    height: 25vw;
+    width: 110%;
 }
 .game-card-wrapper:hover  .game-card.front{
     transform: rotateY(180deg);
