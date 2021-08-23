@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { activModalIn } from '../../features/modalInSlice';
-import { userLogIn } from '../../features/userSlice'
+import { activModalIn } from '../../features/modal/modalInSlice';
 
 /* eslint @typescript-eslint/no-var-requires: "off" */
 

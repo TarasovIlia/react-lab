@@ -2,9 +2,8 @@ import React,  { useState, Component, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { activModalUp } from '../../features/modalUpSlice'
-import { activModalIn } from '../../features/modalInSlice'
-import { userLogIn } from '../../features/userSlice'
+import { activModalUp } from '../../features/modal/modalUpSlice'
+import { activModalIn } from '../../features/modal/modalInSlice'
 
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
@@ -16,6 +15,8 @@ export default function Header (  ) {
     const dispatch = useDispatch();
     const [user, setUserSugnIn] = useState(false) 
     const axios = require('axios')
+
+  
 
     useEffect(() => {
         const userLogIn = localStorage.getItem("email")
@@ -73,6 +74,8 @@ let [linkClassName, setTopPosition] = useState(disablePosition)
 
 const LogOut = () => {
     localStorage.removeItem("email")
+    localStorage.removeItem("username")
+    localStorage.removeItem("userID")
     window.location.pathname = '/'
 } 
 

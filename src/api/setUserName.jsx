@@ -1,13 +1,13 @@
 import FIND_USER_DATA from "./findUserData";
+import { useState } from "react";
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
 const axios = require('axios')
 
-export default function SET_USER_NAME(UserName) {
-    const UserData = FIND_USER_DATA()
-    const UserID = UserData.map(data => data = data.id)
-    if (UserData, UserID) {
-        axios.patch("http://localhost:3000/User/" + UserID, {username : UserName})
+export default function SET_USER_NAME(NewUserName) {
+    const UserID = localStorage.getItem("userID")
+
+    if (UserID) {
+        axios.patch("http://localhost:3000/User/" + UserID, {username : NewUserName})
     }
-    return UserData
 }

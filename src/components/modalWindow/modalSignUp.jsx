@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { activModalUp } from '../../features/modalUpSlice';
-import { userLogIn } from '../../features/userSlice'
+import { activModalUp } from '../../features/modal/modalUpSlice';
+
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
 export default function ModalSignUp ( ) {
