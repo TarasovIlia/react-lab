@@ -30,11 +30,12 @@
       "age": 6,
       "key": "1",
       "platform": {
-        "Xbox One": true,
-        "Playstation 5": true,
+        "XboxOne": true,
+        "Playstation5": true,
         "PC": true
       },
-      "genres" : "survive"
+      "genres" : "survive",
+      "release" : 2006
     },
     {
       "gameName": "Owerwatch",
@@ -46,11 +47,12 @@
       "age": 12,
       "key": "2",
       "platform": {
-        "Xbox One": false,
-        "Playstation 5": false,
+        "XboxOne": false,
+        "Playstation5": false,
         "PC": true
       },
-      "genres" : "shooter"
+      "genres" : "shooter",
+      "release" : 2014
     },
     {
       "gameName": "Terraria",
@@ -62,11 +64,12 @@
       "age": 3,
       "key": "3",
       "platform": {
-        "Xbox One": true,
-        "Playstation 5": true,
+        "XboxOne": true,
+        "Playstation5": true,
         "PC": true
       },
-      "genres" : "survive"
+      "genres" : "survive",
+      "release" : 2010
     },
     {
       "gameName": "Grand Theft Auto V",
@@ -78,11 +81,12 @@
       "age": 18,
       "key": "4",
       "platform": {
-        "Xbox One": true,
-        "Playstation 5": true,
+        "XboxOne": true,
+        "Playstation5": true,
         "PC": true
       },
-      "genres" : "shooter"
+      "genres" : "shooter",
+      "release" : 2012
     },
     {
       "gameName": "God of War 4",
@@ -94,11 +98,12 @@
       "age": 18,
       "key": "5",
       "platform": {
-        "Xbox One": false,
-        "Playstation 5": true,
+        "XboxOne": false,
+        "Playstation5": true,
         "PC": false
       },
-      "genres" : "rpg"
+      "genres" : "rpg",
+      "release" : 2018
     },
     {
       "gameName": "Deus Ex: Mankind Divided",
@@ -110,11 +115,12 @@
       "age": 16,
       "key": "6",
       "platform": {
-        "Xbox One": false,
-        "Playstation 5": true,
+        "XboxOne": false,
+        "Playstation5": true,
         "PC": true
       },
-      "genres" : "rpg"
+      "genres" : "rpg",
+      "release" : 2016
     },
     {
       "gameName": "Assassin's Creed Valhalla",
@@ -126,11 +132,12 @@
       "age": 18,
       "key": "7",
       "platform": {
-        "Xbox One": true,
-        "Playstation 5": true,
+        "XboxOne": true,
+        "Playstation5": true,
         "PC": true
       },
-      "genres" : "rpg"
+      "genres" : "rpg",
+      "release" : 2021
     },
     {
       "gameName": "UFC 4",
@@ -142,11 +149,12 @@
       "age": 12,
       "key": "8",
       "platform": {
-        "Xbox One": false,
-        "Playstation 5": true,
+        "XboxOne": false,
+        "Playstation5": true,
         "PC": false
       },
-      "genres" : "survive"
+      "genres" : "survive",
+      "release" : 2020
     },
     {
       "gameName": "Call of Duty Black Ops 4",
@@ -158,11 +166,12 @@
       "age": 14,
       "key": "9",
       "platform": {
-        "Xbox One": true,
-        "Playstation 5": true,
+        "XboxOne": true,
+        "Playstation5": true,
         "PC": true
       },
-      "genres" : "shooter"
+      "genres" : "shooter",
+      "release" : 2020
     },
     {
       "gameName": "Battlefield 5",
@@ -174,11 +183,12 @@
       "age": 18,
       "key": "10",
       "platform": {
-        "Xbox One": true,
-        "Playstation 5": true,
+        "XboxOne": true,
+        "Playstation5": true,
         "PC": true
       },
-      "genres" : "shooter"
+      "genres" : "shooter",
+      "release" : 2019
     },
     {
       "gameName": "Fable Legends",
@@ -190,11 +200,12 @@
       "age": 16,
       "key": "11",
       "platform": {
-        "Xbox One": true,
-        "Playstation 5": true,
+        "XboxOne": true,
+        "Playstation5": true,
         "PC": false
       },
-      "genres" : "rpg"
+      "genres" : "rpg",
+      "release" : 2021
     },
     {
       "gameName": "Hitman 3",
@@ -206,11 +217,12 @@
       "age": 18,
       "key": "12",
       "platform": {
-        "Xbox One": true,
-        "Playstation 5": true,
+        "XboxOne": true,
+        "Playstation5": true,
         "PC": true
       },
-      "genres" : "shooter"
+      "genres" : "shooter",
+      "release" : 2020
     },
     {
       "gameName": "Batman Arkham Knight",
@@ -222,11 +234,12 @@
       "age": 12,
       "key": "13",
       "platform": {
-        "Xbox One": true,
-        "Playstation 5": true,
+        "XboxOne": true,
+        "Playstation5": true,
         "PC": true
       },
-      "genres" : "rpg"
+      "genres" : "rpg",
+      "release" : 2016
     },
     {
       "gameName": "Spider Man",
@@ -238,11 +251,12 @@
       "age": 12,
       "key": "14",
       "platform": {
-        "Xbox One": false,
-        "Playstation 5": true,
+        "XboxOne": false,
+        "Playstation5": true,
         "PC": false
       },
-      "genres" : "rpg"
+      "genres" : "rpg",
+      "release" : 2018
     }
   ],
   "NavigationData": [

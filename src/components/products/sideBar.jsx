@@ -9,7 +9,7 @@ export default function SideBar() {
     const dispatch = useDispatch()
     return (
         <div className='side-bar-conteiner'>
-            <h1 className='underline'>KEK</h1>
+            <h1 className='underline'>All platforms</h1>
             <div className='main-container'>
                 <p className='underline'>Sort</p>
                 <section className='container'>
