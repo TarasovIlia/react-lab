@@ -27,13 +27,14 @@
       "currency": "$",
       "discription": "lorem",
       "stars": "5",
-      "age": "6+",
+      "age": 6,
       "key": "1",
       "platform": {
         "Xbox One": true,
         "Playstation 5": true,
         "PC": true
-      }
+      },
+      "genres" : "survive"
     },
     {
       "gameName": "Owerwatch",
@@ -42,13 +43,14 @@
       "currency": "$",
       "discription": "lorem",
       "stars": "4",
-      "age": "12+",
+      "age": 12,
       "key": "2",
       "platform": {
         "Xbox One": false,
         "Playstation 5": false,
         "PC": true
-      }
+      },
+      "genres" : "shooter"
     },
     {
       "gameName": "Terraria",
@@ -57,13 +59,14 @@
       "currency": "$",
       "discription": "lorem",
       "stars": "4",
-      "age": "3+",
+      "age": 3,
       "key": "3",
       "platform": {
         "Xbox One": true,
         "Playstation 5": true,
         "PC": true
-      }
+      },
+      "genres" : "survive"
     },
     {
       "gameName": "Grand Theft Auto V",
@@ -72,13 +75,14 @@
       "currency": "$",
       "discription": "lorem",
       "stars": "5",
-      "age": "16+",
+      "age": 18,
       "key": "4",
       "platform": {
         "Xbox One": true,
         "Playstation 5": true,
         "PC": true
-      }
+      },
+      "genres" : "shooter"
     },
     {
       "gameName": "God of War 4",
@@ -87,13 +91,14 @@
       "currency": "$",
       "discription": "lorem",
       "stars": "5",
-      "age": "16+",
+      "age": 18,
       "key": "5",
       "platform": {
         "Xbox One": false,
         "Playstation 5": true,
         "PC": false
-      }
+      },
+      "genres" : "rpg"
     },
     {
       "gameName": "Deus Ex: Mankind Divided",
@@ -102,13 +107,14 @@
       "currency": "$",
       "discription": "lorem",
       "stars": "4",
-      "age": "16+",
+      "age": 16,
       "key": "6",
       "platform": {
         "Xbox One": false,
         "Playstation 5": true,
         "PC": true
-      }
+      },
+      "genres" : "rpg"
     },
     {
       "gameName": "Assassin's Creed Valhalla",
@@ -117,13 +123,14 @@
       "currency": "$",
       "discription": "lorem",
       "stars": "4",
-      "age": "12+",
+      "age": 18,
       "key": "7",
       "platform": {
         "Xbox One": true,
         "Playstation 5": true,
         "PC": true
-      }
+      },
+      "genres" : "rpg"
     },
     {
       "gameName": "UFC 4",
@@ -132,13 +139,14 @@
       "currency": "$",
       "discription": "lorem",
       "stars": "3",
-      "age": "14+",
+      "age": 12,
       "key": "8",
       "platform": {
         "Xbox One": false,
         "Playstation 5": true,
         "PC": false
-      }
+      },
+      "genres" : "survive"
     },
     {
       "gameName": "Call of Duty Black Ops 4",
@@ -147,13 +155,94 @@
       "currency": "$",
       "discription": "lorem",
       "stars": "4",
-      "age": "16+",
+      "age": 14,
       "key": "9",
       "platform": {
         "Xbox One": true,
         "Playstation 5": true,
         "PC": true
-      }
+      },
+      "genres" : "shooter"
+    },
+    {
+      "gameName": "Battlefield 5",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/5/59/BFV_Standard_Edition.png",
+      "priceGame": "31.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "3",
+      "age": 18,
+      "key": "10",
+      "platform": {
+        "Xbox One": true,
+        "Playstation 5": true,
+        "PC": true
+      },
+      "genres" : "shooter"
+    },
+    {
+      "gameName": "Fable Legends",
+      "imgGame": "https://rg-mechanics.me/uploads/posts/2013-09/1006_1006.jpg",
+      "priceGame": "43.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "3",
+      "age": 16,
+      "key": "11",
+      "platform": {
+        "Xbox One": true,
+        "Playstation 5": true,
+        "PC": false
+      },
+      "genres" : "rpg"
+    },
+    {
+      "gameName": "Hitman 3",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/4/4b/Hitman_3_Packart.jpg",
+      "priceGame": "36.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "4",
+      "age": 18,
+      "key": "12",
+      "platform": {
+        "Xbox One": true,
+        "Playstation 5": true,
+        "PC": true
+      },
+      "genres" : "shooter"
+    },
+    {
+      "gameName": "Batman Arkham Knight",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/6/6c/Batman_Arkham_Knight_Cover_Art.jpg",
+      "priceGame": "29.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "5",
+      "age": 12,
+      "key": "13",
+      "platform": {
+        "Xbox One": true,
+        "Playstation 5": true,
+        "PC": true
+      },
+      "genres" : "rpg"
+    },
+    {
+      "gameName": "Spider Man",
+      "imgGame": "https://image.api.playstation.com/vulcan/ap/rnd/202011/0402/pZ2pIEEnH7YhEtpxh1CY6KDz.png",
+      "priceGame": "28.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "5",
+      "age": 12,
+      "key": "14",
+      "platform": {
+        "Xbox One": false,
+        "Playstation 5": true,
+        "PC": false
+      },
+      "genres" : "rpg"
     }
   ],
   "NavigationData": [
@@ -200,7 +289,7 @@
       "email": "tarasav002@gmail.com",
       "password": "333333",
       "id": 2,
-      "username": "Iliya"
+      "username": "ba812-1842177"
     }
   ]
 }

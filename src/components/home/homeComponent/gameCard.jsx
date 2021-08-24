@@ -23,7 +23,7 @@ class GameCard extends React.Component {
                 </div>
                 <div className='game-card back'>
                     <p>description: {this.props.gameData.discription}</p>
-                    <p>{this.props.gameData.age}</p>
+                    <p>{this.props.gameData.age}+</p>
                 </div>
             </div>
         )
