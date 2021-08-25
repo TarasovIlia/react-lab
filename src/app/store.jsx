@@ -6,6 +6,7 @@ import userInReducer from '../features/userLogInData/userSlice'
 import genresFilterReducer from '../features/filter/genre/genresFilterSlice'
 import ageFilterReducer from '../features/filter/age/ageFilterSlice'
 import sortCriteriaParamsReducer from '../features/filter/sort/sortSlice'
+import sortTypeParamsReducer from '../features/filter/sort/sortTypeSlice'
 
 export default configureStore({
     reducer: {
@@ -16,5 +17,6 @@ export default configureStore({
         genres: genresFilterReducer,
         age: ageFilterReducer,
         sortCriteriaParams: sortCriteriaParamsReducer,
+        sortTypeParams: sortTypeParamsReducer,
     },
 })

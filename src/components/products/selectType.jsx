@@ -1,9 +1,17 @@
 import React from 'react'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setSortType } from '../../features/filter/sort/sortTypeSlice'
 
 export default function SelectCriteria() {
     const [openSelectList, setOpenSelectList] = useState(true)
     const [selected, setSelected] = useState('Ascending')
+    const dispatch = useDispatch()
+    const typeValue = () => {
+        if (selected === "Ascending") return -1
+        else if (selected === "Descending") return 1
+    }
+    dispatch(setSortType(typeValue()))
     
     const OpenSelectList =  {transform: "translateY(-100%)", opacity: '0'}
     const CloseSelectList =  {transform: "translateY(0%)", opacity: '1'}
