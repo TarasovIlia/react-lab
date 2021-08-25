@@ -12,7 +12,7 @@ export default function XboxOneComponetns () {
       axios.get('http://localhost:3000/NewGameData')
           .then(request => setItems(request.data))
       })
-    const searchMatch = data.filter(word => word.platform["Xbox One"] == true);
+    const searchMatch = data.filter(word => word.platform.XboxOne == true);
     const searchResult = searchMatch.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
     return (
         <div className="home-wrapper">

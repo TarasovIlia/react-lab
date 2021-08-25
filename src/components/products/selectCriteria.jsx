@@ -1,9 +1,13 @@
 import React from 'react'
 import { useState } from 'react'
+import { useDispatch } from 'react-redux'
+import { setSortParams } from '../../features/filter/sort/sortSlice'
 
 export default function SelectCriteria() {
     const [openSelectList, setOpenSelectList] = useState(true)
     const [selected, setSelected] = useState('Name')
+    const dispatch = useDispatch()
+    dispatch(setSortParams(selected))
     
     const OpenSelectList =  {transform: "translateY(-100%)", opacity: '0'}
     const CloseSelectList =  {transform: "translateY(0%)", opacity: '1'}

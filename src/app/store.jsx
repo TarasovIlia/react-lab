@@ -5,6 +5,7 @@ import modalChangePasswordReducer from '../features/modal/modalChangePasswordSli
 import userInReducer from '../features/userLogInData/userSlice'
 import genresFilterReducer from '../features/filter/genre/genresFilterSlice'
 import ageFilterReducer from '../features/filter/age/ageFilterSlice'
+import sortCriteriaParamsReducer from '../features/filter/sort/sortSlice'
 
 export default configureStore({
     reducer: {
@@ -14,5 +15,6 @@ export default configureStore({
         userIn: userInReducer,
         genres: genresFilterReducer,
         age: ageFilterReducer,
+        sortCriteriaParams: sortCriteriaParamsReducer,
     },
 })

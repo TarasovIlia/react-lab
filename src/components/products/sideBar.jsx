@@ -7,8 +7,11 @@ import { setAgeFilter } from '../../features/filter/age/ageFilterSlice'
 
 export default function SideBar() {
     const dispatch = useDispatch()
+    const kek = useSelector((state) => state.sortCriteriaParams.value)
+
     return (
         <div className='side-bar-conteiner'>
+                       <h1>{kek}</h1>
             <h1 className='underline'>All platforms</h1>
             <div className='main-container'>
                 <p className='underline'>Sort</p>

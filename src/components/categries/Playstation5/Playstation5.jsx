@@ -12,7 +12,7 @@ export default function Playstation5Componetns () {
       axios.get('http://localhost:3000/NewGameData')
           .then(request => setItems(request.data))
       })
-    const searchMatch = data.filter(word => word.platform["Playstation 5"] == true);
+    const searchMatch = data.filter(word => word.platform.Playstation5 == true);
     const searchResult = searchMatch.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
     return (
         <div className="home-wrapper">
