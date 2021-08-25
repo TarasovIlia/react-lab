@@ -54,6 +54,7 @@ export default function Products () {
         function handlChange(e) {
             setValue(e.target.value)
         }
+        const noResult = <div className='no-result'><h1>no result</h1></div>
         return (
             <div>
             <div className='side-bar-wrapper'>
@@ -61,12 +62,13 @@ export default function Products () {
             </div>
             <div className="home-wrapper product-wrapper">
                 <Search seacrh={ seacrh } onChange={handlChange}/>
+                {FilterResult.length === 0 ? noResult : 
                 <div className='main-wrapper-group main-wrapper-underline'>
                     <p>{ searchAction ? 'Result:' : 'Products' }</p>
                     <div className='main-wrapper-group-grid'>
                     {FilterResult}
                     </div>
-                </div>
+                </div>}
             </div>
         </div>
     )

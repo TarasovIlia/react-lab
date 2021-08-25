@@ -17,15 +17,20 @@ export default function NewGame(props) {
     const searchAction = props.seacrh
 
     const searchMatch = data.filter(word => word.gameName.toLowerCase().match(searchAction.trim()));
-    const searchResult = searchMatch.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
 
-    const gameList = data.filter(data => data.release >= 2020 ).map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
+    const sortByRelease = searchMatch.sort((a, b) => {
+        if (a.release > b.release) return -1
+        if (a.release < b.release) return 1
+        return 0
+    })
+    const gameList = sortByRelease.map(gameData =>  <GameCard key={gameData.key} gameData={gameData}/>)
+
 
     return (
         <div className='main-wrapper-group main-wrapper-underline'>
             <p>{ searchAction ? 'Result:' : 'New games' }</p>
             <div className='main-wrapper-group-grid'>
-           {searchAction ? searchResult : gameList}
+            {gameList}
             </div>
         </div>
     )
