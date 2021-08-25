@@ -15,22 +15,19 @@ export default function UserProfile() {
     const UserName = localStorage.getItem("username")
     const UserID = localStorage.getItem("userID")
     const UserEmail = localStorage.getItem("email")
-    
-
+    //..
+    //const [successModal, setSuccessModal] = useState(false)
     const [userImg, setUserImg] = useState('')
-    
     const [NewUserName, setNewUserName] = useState('')
-
+    
     const UpdateUserName = () => {
         if (NewUserName) {
-            console.log('kek')
             setNewUserName('')
             FIND_USER_NAME(NewUserName)
-            window.location.pathname = '/profile'
+            window.location.pathname = '/'
         }
     }
 
-    
     return (
         <div className="home-wrapper">
             <div className="main-wrapper-group main-wrapper-underline">

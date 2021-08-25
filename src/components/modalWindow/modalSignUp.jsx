@@ -15,28 +15,23 @@ export default function ModalSignUp ( ) {
     const dispatch = useDispatch();
     const axios = require('axios')
 
-    useEffect(() => {
-        if (validation && validationMail) {
-            setTotalValidation(true)
-        }
-        else {
-            setTotalValidation(false)
-        }
-    })
-
+    if (validation && validationMail) {
+        setTotalValidation(true)
+    }
+    else {
+        setTotalValidation(false)
+    }
+    
     const [data, setData] = useState([])
 
-    useEffect(() => {
-        axios.get('http://localhost:3000/User').then(response => setData(response.data))
-            const Email = data.filter(data => data.email === userEmail)
-        if (Email.length === 0) {
-            setEmailUniqueness(true)
-        }
-        else {
-            setEmailUniqueness(false)
-        }
-
-    },)
+    axios.get('http://localhost:3000/User').then(response => setData(response.data))
+        const Email = data.filter(data => data.email === userEmail)
+    if (Email.length === 0) {
+        setEmailUniqueness(true)
+    }
+    else {
+        setEmailUniqueness(false)
+    }
 
     const sendEmail = (e) => {
         setEmail(e.target.value)

@@ -14,5 +14,4 @@ export default function FIND_USER_DATA() {
     const UserID = UserData.map(data => data = data.id)
     localStorage.setItem("userID", UserID)
     localStorage.setItem("username", UserName)
-    console.log(UserName)
 }

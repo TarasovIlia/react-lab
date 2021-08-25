@@ -23,7 +23,6 @@ import ModalCahngePassword from './components/modalWindow/modalCahngePassword';
 
 
 import UserProfile from './components/user-profile/userProfile';
-import Cart from './components/cart/cart'
 
 
 
@@ -45,7 +44,6 @@ return (
               <Route history={history} path='/Playstation5' component={Playstation5Componetns} />
               <Route history={history} path='/XboxOne' component={XboxOneComponetns} />
               <Route history={history} path='/profile' component={UserProfile} />
-              <Route history={history} path='/cart' component={Cart} />
             </div>
           </Switch>
           <Footer />
