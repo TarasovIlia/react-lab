@@ -5,8 +5,13 @@
     border: none;
     cursor: pointer;
     p{
-        padding: 22px 42px;
+        padding: 14px 42px;
         border-radius: 22px;
         background-color: blueviolet;
+        transition-duration: 0.2s;
+        &:hover {
+            background-color: rgb(109, 31, 182);
+            transition-duration: 0.2s;
+        }
     }
 }

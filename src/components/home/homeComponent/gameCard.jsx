@@ -2,6 +2,7 @@ import React from 'react';
 import PC from '../../../icon/icons8-microsoft.svg'
 import XboX from '../../../icon/icons8-xbox.svg'
 import PS5 from '../../../icon/icons8-playstation.svg'
+import ADD_TO_CARD from '../../../api/addToCard';
 
 import PropTypes from 'prop-types';
 
@@ -12,7 +13,7 @@ export default function GameCard (props) {
         let stars = [...Array(parseInt(starCounter))].map((i) => <Star key={i}/>)
         
         return (
-            <div className='game-card-wrapper'>
+            <div onClick={() => ADD_TO_CARD(props.gameData)} className='game-card-wrapper'>
                  <div className='game-card front'>
                     <div className='icon-container'>
                         { props.gameData.platform.PC ? <img className="platform-icon" src={PC} alt="" /> : null }

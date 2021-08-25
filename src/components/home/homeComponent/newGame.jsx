@@ -6,14 +6,12 @@ import PropTypes from 'prop-types';
 import GameCard from './gameCard'
 
 export default function NewGame(props) {
-    const [data, setItems] = useState([]);
+    const [data, setData] = useState([]);
     const axios = require('axios')
 
-    useEffect(() => {
-      axios.get('http://localhost:3000/NewGameData')
-          .then(function(responce) {
-              if (responce) setItems(responce.data)} )
-      }, [])
+    axios.get('http://localhost:3000/NewGameData')
+        .then(responce => setData(responce.data) )
+ 
     const searchAction = props.seacrh
 
     const searchMatch = data.filter(word => word.gameName.toLowerCase().match(searchAction.trim()));

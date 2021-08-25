@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
 import { activModalUp } from '../../features/modal/modalUpSlice'
 import { activModalIn } from '../../features/modal/modalInSlice'
+import GET_CART_ITEM from '../../api/getCardItem';
 
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
@@ -15,6 +16,7 @@ export default function Header (  ) {
     const dispatch = useDispatch();
     const [user, setUserSugnIn] = useState(false) 
     const axios = require('axios')
+    const cartItem = GET_CART_ITEM()
 
   
 
@@ -58,7 +60,7 @@ export default function Header (  ) {
             <p style={{color : host === data.link ? 'blueviolet' : null}}>{data.name}</p>
         </Link>)
 
-const cart = 0
+const cart = cartItem.length
 const userDidntSignUp = <p>sign up</p>
 const userSignInProfile = <div>
         <Link to="profile"><p style={host === "profile" ? StyleForProfileBtn : null}>{userName}</p></Link>

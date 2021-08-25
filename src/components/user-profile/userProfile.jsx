@@ -23,7 +23,6 @@ export default function UserProfile() {
 
     const UpdateUserName = () => {
         if (NewUserName) {
-            console.log('kek')
             setNewUserName('')
             FIND_USER_NAME(NewUserName)
             window.location.pathname = '/profile'
