@@ -1,25 +1,18 @@
 import React, { useState, useEffect} from 'react';
 import PropTypes from 'prop-types';
 
+/* eslint @typescript-eslint/no-var-requires: "off" */
+
 import GameCard from './gameCard'
 
 export default function NewGame(props) {
     const [data, setItems] = useState([]);
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
+    const axios = require('axios')
 
     useEffect(() => {
-        fetch('http://localhost:3000/NewGameData')
-          .then(res => res.json())
-          .then(
-            (result) => {
-              setItems(result);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-              }
-          )
+      axios.get('http://localhost:3000/NewGameData')
+          .then(function(responce) {
+              if (responce) setItems(responce.data)} )
       }, [])
     const searchAction = props.seacrh  
     const searchMatch = data.filter(word => word.gameName.toLowerCase().match(searchAction.trim()));

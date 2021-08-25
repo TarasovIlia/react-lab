@@ -2,31 +2,16 @@ import React, { useState, useEffect} from 'react';
 
 import CategoriesCards from './categoriesCards';
 
+/* eslint @typescript-eslint/no-var-requires: "off" */
 
 export default function Categories ()  {
-    const [items, setItems] = useState([]);
-    const [error, setError] = useState(null);
-    const [isLoaded, setIsLoaded] = useState(false);
-
+    const [data, setItems] = useState([]);
+    const axios = require('axios')
     useEffect(() => {
-        fetch('http://localhost:3000/CategoriesData')
-          .then(res => res.json())
-          .then(
-            (result) => {
-              setItems(result);
-              setItems(result);
-            },
-            (error) => {
-                setIsLoaded(true);
-                setError(error);
-              }
-          )
+      axios.get('http://localhost:3000/CategoriesData')
+        .then(response => setItems(response.data))
       }, [])
-    
-    const categoriesList = items.map(categories => <CategoriesCards key={categories.key} link={categories.link} name={categories.categoriesName} img={categories.imgOfCategoty}/>)
-    if (isLoaded) {
-      return <h5>KEK</h5>
-    }
+    const categoriesList = data.map(categories => <CategoriesCards key={categories.key} link={categories.link} name={categories.categoriesName} img={categories.imgOfCategoty}/>)
     return (
         <div className='main-wrapper-group main-wrapper-underline'>
            <p>Categories</p>

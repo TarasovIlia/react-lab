@@ -1,7 +1,8 @@
+@import '../style/components/variables.scss';
 .header {
     width: 100%;
     height: 70px;
-    background-color: rgb(34, 34, 34);
+    background-color: $colorHeader;
     position: fixed;
     top: 0px;
 

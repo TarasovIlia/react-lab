@@ -1,4 +1,8 @@
-@import './style/btn-style/link-Btn-Style.scss';
+@import './style/btn-style/linkBtnStyle.scss';
+@import './style/btn-style/closeBtnStyle.scss';
+@import './style/btn-style/signUpButton.scss';
+@import './style/btn-style/modalButton.scss';
+
 @import './style/aboutStyle.scss';
 @import './style/footerStyle.scss';
 @import './style/headerStyle.scss';
@@ -6,4 +10,4 @@
 @import './style/productStyle.scss';
 @import './style//styleHomeComponents/categoriesStyle.scss';
 @import './style//styleHomeComponents/newGameStyle.scss';
-@import './style/components/variables.scss'
+@import './style/modal/signUpModal.scss';

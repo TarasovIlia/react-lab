@@ -1,0 +1,14 @@
+.sign-up-button {
+    padding: 0px 10px;
+    p {
+        border: solid 2px #fff;
+        border-radius: 22px;
+        padding: 10px 20px;
+    }
+    &:hover {
+        background: none;
+        p {
+            border: solid 2px blueviolet;
+        }
+    }
+}
