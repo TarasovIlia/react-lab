@@ -19,31 +19,24 @@ export default function ModalSignUp ( ) {
         setPass(e.target.value)
     }
     const dispatch = useDispatch();
-    const modalIn = useSelector((state) => state.modalIn.value)
-    const user = useSelector((state) => state.user.value)
 
-    const userAuthorization = (e) =>   {
+    function userAuthorization(e) {
         e.preventDefault()
         axios.get('http://localhost:3000/User')
-        .then(function(response)  {setUserData(response.data)})
-        const userValidationEmail = userData.filter(data => data.email === userEmail)
-        const userValidationPass = userValidationEmail.filter(data => data.password === userPass)
-        if (userValidationEmail.length === 1 && userValidationPass.length === 1) {
-            axios({
-                method: 'POST',
-                url: 'http://localhost:3000/SignIn',
-                data: {
-                    email: userEmail,
-                    password: userPass
-                }
-            })
-            dispatch(activModalIn());
-            window.location.pathname = '/'
-        }
-        else {
-            setWarningIndicator(true)
-            return false
-        }
+        .then(response => {
+            setUserData(response.data)
+            const userValidationEmail = userData.filter(data => data.email === userEmail)
+            const userValidationPass = userValidationEmail.filter(data => data.password === userPass)
+            if (userValidationEmail.length === 1 && userValidationPass.length === 1) {
+                localStorage.setItem("email", userEmail)
+                dispatch(activModalIn());
+                window.location.pathname = '/'
+            }
+            else {
+                setWarningIndicator(true)
+                return false
+            }
+        })
     }
 
     return (
