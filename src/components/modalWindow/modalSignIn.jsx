@@ -1,7 +1,6 @@
 import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
-import { activModalIn } from '../../features/modalInSlice';
-import { userLogIn } from '../../features/userSlice'
+import { activModalIn } from '../../features/modal/modalInSlice';
 
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
@@ -29,8 +28,8 @@ export default function ModalSignUp ( ) {
             const userValidationPass = userValidationEmail.filter(data => data.password === userPass)
             if (userValidationEmail.length === 1 && userValidationPass.length === 1) {
                 localStorage.setItem("email", userEmail)
+                localStorage.setItem("userLogIn", true)
                 dispatch(activModalIn());
-                window.location.pathname = '/'
             }
             else {
                 setWarningIndicator(true)

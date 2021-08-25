@@ -1,14 +1,14 @@
 import { configureStore } from '@reduxjs/toolkit'
-import modalUpReducer from '../features/modalUpSlice'
-import modalInReducer from '../features/modalInSlice'
-import userReducer from '../features/userSlice'
-import userNameReducer from '../features/userName'
+import modalUpReducer from '../features/modal/modalUpSlice'
+import modalInReducer from '../features/modal/modalInSlice'
+import modalChangePasswordReducer from '../features/modal/modalChangePasswordSlice'
+import userInReducer from '../features/userLogInData/userSlice'
 
 export default configureStore({
     reducer: {
         modalUp: modalUpReducer,
         modalIn: modalInReducer,
-        user: userReducer,
-        username: userNameReducer
+        modalChangePassword: modalChangePasswordReducer,
+        userIn: userInReducer,
     },
 })

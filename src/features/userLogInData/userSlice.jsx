@@ -3,15 +3,15 @@ import { createSlice } from '@reduxjs/toolkit'
 export const userSlice = createSlice({
     name: 'user',
     initialState: {
-        value: false
+        value: localStorage.getItem('userLogIn')
     },
     reducers: {
-        userLogIn: (state) => {
+        setUserLogIn: (state) => {
             state.value = !state.value;
         }
     },
 })
 
-export const { userLogIn } = userSlice.actions
+export const { setUserLogIn } = userSlice.actions
 
 export default userSlice.reducer

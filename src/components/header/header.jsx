@@ -2,65 +2,59 @@ import React,  { useState, Component, useEffect } from 'react';
 import { Link } from 'react-router-dom';
 import PropTypes from 'prop-types';
 import { useDispatch, useSelector } from 'react-redux';
-import { activModalUp } from '../../features/modalUpSlice'
-import { activModalIn } from '../../features/modalInSlice'
-import { userLogIn } from '../../features/userSlice'
+import { activModalUp } from '../../features/modal/modalUpSlice'
+import { activModalIn } from '../../features/modal/modalInSlice'
+import { setUserLogIn } from '../../features/userLogInData/userSlice'
 
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
 import NavigationData from '../data/navigationData'
 
 export default function Header (  ) {
+    const userLogIn = localStorage.getItem('userLogIn')
+    const userName = localStorage.getItem('username')
+    const userMail = localStorage.getItem('email')
     const [data, setItems] = useState([]);
-    const [userName, setUserName] = useState('User001');
     const dispatch = useDispatch();
-    const [user, setUserSugnIn] = useState(false) 
+    
     const axios = require('axios')
+    axios.get('http://localhost:3000/NavigationData')
+        .then(function (response) {
+            setItems(response.data);
+        })
 
-    useEffect(() => {
-        const userLogIn = localStorage.getItem("email")
-        if (userLogIn) {
-            setUserSugnIn(true)
-            setUserName(userLogIn)
-        }
-        else {
-            setUserSugnIn(false)
-        }
-        axios.get('http://localhost:3000/NavigationData')
-            .then(function (response) {
-                setItems(response.data);
-            })
-      }, [])
+    //style
+    const buttonStyleActive = "solid 5px blueviolet";
+    const buttonProfileStyleActive = "solid 2px blueviolet";
 
-    const ButtonStyleActive = "solid 5px blueviolet";
-    const ButtonProfileStyleActive = "solid 2px blueviolet";
-
-    const StyleForBtn =  { borderBottom : ButtonStyleActive }
-    const StyleForProfileBtn = { border : ButtonProfileStyleActive }
+    const styleForBtn =  { borderBottom : buttonStyleActive }
+    const styleForProfileBtn = { border : buttonProfileStyleActive }
 
     let host = window.location.pathname;
     host = host.split("/")[1]
+    //...
 
-    const navigation = data.map(data  => 
-        <Link  to={data.href}  key={data.key}>
-            <button
-                onMouseLeave={() => setTopPosition(linkClassName = disablePosition)} 
-                onMouseEnter={() => setTopPosition(linkClassName = data.title === 'products' ? activePosition : disablePosition)} 
-                style={ host === data.title ? StyleForBtn : null }
-                className="link-btn">
-                <p>{data.title}</p>
-            </button>
-        </Link>)
 
-    const navigationCategories = NavigationData[2].categories.map(data => 
-        <Link to={data.link} key={data.key}>
-            <p style={{color : host === data.link ? 'blueviolet' : null}}>{data.name}</p>
-        </Link>)
+const navigation = data.map(data  => 
+    <Link  to={data.href}  key={data.key}>
+        <button
+            onMouseLeave={() => setTopPosition(linkClassName = disablePosition)} 
+            onMouseEnter={() => setTopPosition(linkClassName = data.title === 'products' ? activePosition : disablePosition)} 
+            style={ host === data.title ? styleForBtn : null }
+            className="link-btn">
+            <p>{data.title}</p>
+        </button>
+    </Link>)
+
+const navigationCategories = NavigationData[2].categories.map(data => 
+    <Link to={data.link} key={data.key}>
+        <p style={{color : host === data.link ? 'blueviolet' : null}}>{data.name}</p>
+    </Link>)
 
 const cart = 0
 const userDidntSignUp = <p>sign up</p>
 const userSignInProfile = <div>
-        <Link to="profile"><p style={host === "profile" ? StyleForProfileBtn : null}>{userName}</p></Link>
+        <Link to="profile"><p style={host === "profile" ? styleForProfileBtn : null}>{userName || userMail}</p></Link>
     </div>
 const userSignInCart = <div> 
             <img src='https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png' alt="" /><p>{cart}</p>
@@ -69,12 +63,15 @@ const userSignInCart = <div>
 const disablePosition = '-400px' 
 const activePosition = '70px';
 
-let [linkClassName, setTopPosition] = useState(disablePosition)
-
 const LogOut = () => {
     localStorage.removeItem("email")
+    localStorage.removeItem("username")
+    localStorage.removeItem("userID")
+    localStorage.removeItem("userLogIn")
     window.location.pathname = '/'
-} 
+}
+
+let [linkClassName, setTopPosition] = useState(disablePosition)
 
     return (
             <header className="header">
@@ -89,13 +86,14 @@ const LogOut = () => {
                         }}>                           
                         {navigationCategories}
                     </div>
-                    {user ?
+                    {userLogIn ?
                         <button className="link-btn sign-up-button">{ userSignInProfile}</button>
                         :
                         <button onClick={ () => dispatch(activModalUp()) }  className="link-btn sign-up-button">{ userDidntSignUp }</button>
                     }
-                    {user ? <Link to="cart"><button style={host === "cart" ? StyleForBtn : null} className="link-btn cart-btn">{ userSignInCart}</button></Link> : null}
-                    {user ? 
+                    {userLogIn ? <Link to="cart"><button style={host === "cart" ? styleForBtn : null} className="link-btn cart-btn">{ userSignInCart }</button></Link> : null}
+                    
+                    {userLogIn ? 
                         <button className="link-btn" onClick={LogOut}>
                         <img src="https://img.icons8.com/ios-glyphs/30/ffffff/exit.png"/></button>
                         :
