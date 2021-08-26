@@ -35,7 +35,8 @@
         "PC": true
       },
       "genres": "survive",
-      "release": 2006
+      "release": 2006,
+      "id": 1
     },
     {
       "gameName": "Owerwatch",
@@ -52,7 +53,8 @@
         "PC": true
       },
       "genres": "shooter",
-      "release": 2014
+      "release": 2014,
+      "id": 2
     },
     {
       "gameName": "Terraria",
@@ -69,7 +71,8 @@
         "PC": true
       },
       "genres": "survive",
-      "release": 2010
+      "release": 2010,
+      "id": 3
     },
     {
       "gameName": "Grand Theft Auto V",
@@ -86,7 +89,8 @@
         "PC": true
       },
       "genres": "shooter",
-      "release": 2012
+      "release": 2012,
+      "id": 4
     },
     {
       "gameName": "God of War 4",
@@ -103,7 +107,8 @@
         "PC": false
       },
       "genres": "rpg",
-      "release": 2018
+      "release": 2018,
+      "id": 5
     },
     {
       "gameName": "Deus Ex: Mankind Divided",
@@ -120,7 +125,8 @@
         "PC": true
       },
       "genres": "rpg",
-      "release": 2016
+      "release": 2016,
+      "id": 6
     },
     {
       "gameName": "Assassin's Creed Valhalla",
@@ -137,7 +143,8 @@
         "PC": true
       },
       "genres": "rpg",
-      "release": 2021
+      "release": 2021,
+      "id": 7
     },
     {
       "gameName": "UFC 4",
@@ -154,7 +161,8 @@
         "PC": false
       },
       "genres": "survive",
-      "release": 2020
+      "release": 2020,
+      "id": 8
     },
     {
       "gameName": "Call of Duty Black Ops 4",
@@ -171,7 +179,8 @@
         "PC": true
       },
       "genres": "shooter",
-      "release": 2020
+      "release": 2020,
+      "id": 9
     },
     {
       "gameName": "Battlefield 5",
@@ -188,7 +197,8 @@
         "PC": true
       },
       "genres": "shooter",
-      "release": 2019
+      "release": 2019,
+      "id": 10
     },
     {
       "gameName": "Fable Legends",
@@ -205,7 +215,8 @@
         "PC": false
       },
       "genres": "rpg",
-      "release": 2021
+      "release": 2021,
+      "id": 11
     },
     {
       "gameName": "Hitman 3",
@@ -222,7 +233,8 @@
         "PC": true
       },
       "genres": "shooter",
-      "release": 2020
+      "release": 2020,
+      "id": 12
     },
     {
       "gameName": "Batman Arkham Knight",
@@ -239,14 +251,15 @@
         "PC": true
       },
       "genres": "rpg",
-      "release": 2016
+      "release": 2016,
+      "id": 13
     },
     {
       "gameName": "Spider Man",
       "imgGame": "https://image.api.playstation.com/vulcan/ap/rnd/202011/0402/pZ2pIEEnH7YhEtpxh1CY6KDz.png",
-      "priceGame": "28.99",
+      "priceGame": "28.22",
       "currency": "$",
-      "discription": "lorem",
+      "discription": "is a 2018 action-adventure game developed by Insomniac Games and published by Sony Interactive Entertainment.",
       "stars": "5",
       "age": 12,
       "key": "14",
@@ -256,7 +269,8 @@
         "PC": false
       },
       "genres": "rpg",
-      "release": 2018
+      "release": 2018,
+      "id": 14
     }
   ],
   "NavigationData": [
@@ -307,22 +321,12 @@
     },
     {
       "email": "adminPage",
-      "password": "123123",
+      "password": "333222",
       "id": 3,
       "username": "KEK"
     }
   ],
   "Cart": [
-    {
-      "gameName": "Owerwatch",
-      "priceGame": "23.99",
-      "platform": {
-        "XboxOne": false,
-        "Playstation5": false,
-        "PC": true
-      },
-      "id": 1
-    },
     {
       "gameName": "God of War 4",
       "priceGame": "49.99",

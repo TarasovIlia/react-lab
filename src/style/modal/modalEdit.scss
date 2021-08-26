@@ -1,0 +1,46 @@
+@import '../components/variables.scss';
+.edit-item-modal-window {
+    background-color: $colorHeader;
+    border: solid 3px blueviolet;
+    border-radius: 22px;
+    width: 55%;
+    position: relative;
+    .main-modal-conteiner {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        .content-modal {
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+
+            .img-edit-card {
+                img {
+                    margin-top: 20px;
+                    width: 80%;
+                }
+            }
+
+            .info-edit-card {
+                .input-form {
+                    margin-top: 20px;
+                    .row {
+                        width: 600px;
+                        align-items: center;
+                        margin-top: 10px;
+                    }
+                }
+                .search-input {
+                    width: 70%;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .edit-footer {
+        width: 70%;
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-between;
+    }
+}

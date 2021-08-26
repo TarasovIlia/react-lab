@@ -1,6 +1,7 @@
 const modalSingIn = document.getElementById('modal-sign-in')
 const modalSingUp = document.getElementById('modal-sign-up')
 const modalCahngePassword = document.getElementById('modal-change-pass')
+const modalEditItem = document.getElementById('modal-edit-item')
 
 import React from 'react';
 import ReactDOM from 'react-dom';
@@ -20,6 +21,7 @@ import XboxOneComponetns from './components/categries/XboxOne/XboxOneComponents'
 import ModalSignUp from './components/modalWindow/modalSignUp';
 import ModalSignIn from './components/modalWindow/modalSignIn';
 import ModalCahngePassword from './components/modalWindow/modalCahngePassword';
+import ModalEditItem from './components/modalWindow/modalEditItem'
 
 import UserProfile from './components/user-profile/userProfile';
 import Cart from './components/cart/cart'
@@ -30,6 +32,7 @@ function App (){
   const modalUp = useSelector((state) => state.modalUp.value)
   const modalIn = useSelector((state) => state.modalIn.value)
   const ChangePassword = useSelector((state) => state.modalChangePassword.value)
+  const modalEdit = useSelector((state) => state.edit.value)
   
 
 return (
@@ -63,6 +66,10 @@ return (
         {ChangePassword && ReactDOM.createPortal (
           <ModalCahngePassword/>,
           modalCahngePassword
+        )}
+        {modalEdit && ReactDOM.createPortal (
+          <ModalEditItem/>,
+          modalEditItem
         )}
       </main>
     </div>

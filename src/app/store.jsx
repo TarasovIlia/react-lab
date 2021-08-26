@@ -8,6 +8,10 @@ import ageFilterReducer from '../features/filter/age/ageFilterSlice'
 import sortCriteriaParamsReducer from '../features/filter/sort/sortSlice'
 import sortTypeParamsReducer from '../features/filter/sort/sortTypeSlice'
 import adminInReducer from '../features/userLogInData/adminSlice'
+import modalEditItemReducer from '../features/modal/modalEdit'
+import gameIdSliceReducer from '../features/modal/gameIdSlice'
+
+
 
 export default configureStore({
     reducer: {
@@ -20,5 +24,7 @@ export default configureStore({
         sortCriteriaParams: sortCriteriaParamsReducer,
         sortTypeParams: sortTypeParamsReducer,
         admin: adminInReducer,
+        edit: modalEditItemReducer,
+        id: gameIdSliceReducer,
     },
 })

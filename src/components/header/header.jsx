@@ -5,7 +5,8 @@ import { useDispatch, useSelector } from 'react-redux';
 import { activModalUp } from '../../features/modal/modalUpSlice'
 import { activModalIn } from '../../features/modal/modalInSlice'
 import GET_CART_ITEM from '../../api/getCardItem';
-import adminImg from '../../icon/icons8-settings.svg'
+import adminImg from '../../icon/icons8-settings.svg';
+import ADMIN_CHECKOUT from '../../api/adminValidation';
 
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
@@ -18,8 +19,7 @@ export default function Header (  ) {
     const [user, setUserSugnIn] = useState(false) 
     const axios = require('axios')
     const cartItem = GET_CART_ITEM()
-    const email = localStorage.getItem("email")
-
+    const admin = ADMIN_CHECKOUT()
   
 
     useEffect(() => {
@@ -68,7 +68,7 @@ const userSignInProfile = <div>
         <Link to="profile">
             <p style={host === "profile" ? StyleForProfileBtn : null}>
                 {userName} 
-                { email === 'adminPage' ? <img className="profile-img" src={adminImg} alt="" /> : null}
+                { admin ? <img className="profile-img" src={adminImg} alt="" /> : null}
             </p></Link>
     </div>
 const userSignInCart = <div> 

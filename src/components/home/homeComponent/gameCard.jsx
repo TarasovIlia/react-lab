@@ -3,15 +3,25 @@ import PC from '../../../icon/icons8-microsoft.svg'
 import XboX from '../../../icon/icons8-xbox.svg'
 import PS5 from '../../../icon/icons8-playstation.svg'
 import ADD_TO_CART from '../../../api/addToCart';
-
+import ADMIN_CHECKOUT from '../../../api/adminValidation';
+import { useDispatch } from 'react-redux';
+import { activModalEdit } from '../../../features/modal/modalEdit'
+import { setGameId } from '../../../features/modal/gameIdSlice'
+ 
 import PropTypes from 'prop-types';
 
 import Star from './elemenst/star'
 
 export default function GameCard (props) {
-        const email = localStorage.getItem('email')
+        const dispatch = useDispatch()
+        const admin = ADMIN_CHECKOUT() 
         let starCounter = props.gameData.stars
         let stars = [...Array(parseInt(starCounter))].map((i) => <Star key={i}/>)
+
+        const editItem = () => {
+            dispatch(activModalEdit())
+            dispatch(setGameId(props.gameData.key))
+        }
         
         return (
             <div className='game-card-wrapper'>
@@ -33,7 +43,7 @@ export default function GameCard (props) {
                 <div className='game-card back'>
                     <p>description: {props.gameData.discription}</p>
                     <button onClick={() => ADD_TO_CART(props.gameData)} className="modal-button"><p>add to cart</p></button>
-                    { email === 'adminPage' ? <button onClick={() => console.log("kek")} className="modal-button"><p>change</p></button> : null}
+                    { admin ? <button onClick={editItem} className="modal-button"><p>edit</p></button> : null}
                     <p>{props.gameData.age}+</p>
                 </div>
             </div>
@@ -42,4 +52,5 @@ export default function GameCard (props) {
 
 GameCard.propTypes = {
     gameData: PropTypes.any,
+    key: PropTypes.number
 };
