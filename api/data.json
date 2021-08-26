@@ -303,8 +303,19 @@
       "email": "tarasav002@gmail.com",
       "password": "333333",
       "id": 2,
-      "username": "ba812-1842177"
+      "username": "Iliya"
     }
   ],
-  "Cart": []
+  "Cart": [
+    {
+      "gameName": "Deus Ex: Mankind Divided",
+      "priceGame": "26.99",
+      "platform": {
+        "XboxOne": false,
+        "Playstation5": true,
+        "PC": true
+      },
+      "id": 3
+    }
+  ]
 }

@@ -15,6 +15,11 @@ export default function Cart () {
 
     const totalCost = cost
 
+    const removeFromCart = () => {
+        itemID ? REMOVE_FROM_CART(itemID) : null
+
+    }
+
     return (
         <div className='home-wrapper'>
             <div className='main-wrapper-group main-wrapper-underline'>
@@ -46,7 +51,7 @@ export default function Cart () {
                         <td/>
                         <td/>
                         <td>
-                            <button onClick={() => itemID ? REMOVE_FROM_CART(itemID) : null} className='modal-button button-table'><p>Remove</p></button>
+                            <button onClick={removeFromCart} className='modal-button button-table'><p>Remove</p></button>
                         </td>
                     </tr>
                 </table>
@@ -55,7 +60,7 @@ export default function Cart () {
                         <p>Game cost: {totalCost}</p>
                     </section>
                     <section>
-                        <p>Your balance: {10 + +totalCost}</p>
+                        <p>Your balance: {(10 + +totalCost).toFixed(2)}</p>
                     </section>
                     <section>
                         <button  className='modal-button button-table'><p>Bye</p></button>
