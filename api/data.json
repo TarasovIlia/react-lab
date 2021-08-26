@@ -304,14 +304,40 @@
       "password": "333333",
       "id": 2,
       "username": "Iliya"
+    },
+    {
+      "email": "adminPage",
+      "password": "123123",
+      "id": 3,
+      "username": "KEK"
     }
   ],
   "Cart": [
     {
-      "gameName": "Deus Ex: Mankind Divided",
-      "priceGame": "26.99",
+      "gameName": "Owerwatch",
+      "priceGame": "23.99",
       "platform": {
         "XboxOne": false,
+        "Playstation5": false,
+        "PC": true
+      },
+      "id": 1
+    },
+    {
+      "gameName": "God of War 4",
+      "priceGame": "49.99",
+      "platform": {
+        "XboxOne": false,
+        "Playstation5": true,
+        "PC": false
+      },
+      "id": 2
+    },
+    {
+      "gameName": "Terraria",
+      "priceGame": "25.99",
+      "platform": {
+        "XboxOne": true,
         "Playstation5": true,
         "PC": true
       },

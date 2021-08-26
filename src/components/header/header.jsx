@@ -5,6 +5,7 @@ import { useDispatch, useSelector } from 'react-redux';
 import { activModalUp } from '../../features/modal/modalUpSlice'
 import { activModalIn } from '../../features/modal/modalInSlice'
 import GET_CART_ITEM from '../../api/getCardItem';
+import adminImg from '../../icon/icons8-settings.svg'
 
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
@@ -17,6 +18,7 @@ export default function Header (  ) {
     const [user, setUserSugnIn] = useState(false) 
     const axios = require('axios')
     const cartItem = GET_CART_ITEM()
+    const email = localStorage.getItem("email")
 
   
 
@@ -63,7 +65,11 @@ export default function Header (  ) {
 const cart = cartItem.length
 const userDidntSignUp = <p>sign up</p>
 const userSignInProfile = <div>
-        <Link to="profile"><p style={host === "profile" ? StyleForProfileBtn : null}>{userName}</p></Link>
+        <Link to="profile">
+            <p style={host === "profile" ? StyleForProfileBtn : null}>
+                {userName} 
+                { email === 'adminPage' ? <img className="profile-img" src={adminImg} alt="" /> : null}
+            </p></Link>
     </div>
 const userSignInCart = <div> 
             <img src='https://img.icons8.com/ios-glyphs/30/ffffff/shopping-cart--v1.png' alt="" /><p>{cart}</p>
@@ -85,7 +91,6 @@ const LogOut = () => {
             <header className="header">
                 <h1>Games Market</h1>
                 <div className="nav_bar">
-                   
                     {navigation}
                     <div className='products-link' onMouseLeave={() => setTopPosition(linkClassName = disablePosition)} 
                         onMouseEnter={() => setTopPosition(linkClassName = activePosition)}

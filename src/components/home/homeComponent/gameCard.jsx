@@ -9,11 +9,12 @@ import PropTypes from 'prop-types';
 import Star from './elemenst/star'
 
 export default function GameCard (props) {
+        const email = localStorage.getItem('email')
         let starCounter = props.gameData.stars
         let stars = [...Array(parseInt(starCounter))].map((i) => <Star key={i}/>)
         
         return (
-            <div onClick={() => ADD_TO_CART(props.gameData)} className='game-card-wrapper'>
+            <div className='game-card-wrapper'>
                  <div className='game-card front'>
                     <div className='icon-container'>
                         { props.gameData.platform.PC ? <img className="platform-icon" src={PC} alt="" /> : null }
@@ -31,6 +32,8 @@ export default function GameCard (props) {
                 </div>
                 <div className='game-card back'>
                     <p>description: {props.gameData.discription}</p>
+                    <button onClick={() => ADD_TO_CART(props.gameData)} className="modal-button"><p>add to cart</p></button>
+                    { email === 'adminPage' ? <button onClick={() => console.log("kek")} className="modal-button"><p>change</p></button> : null}
                     <p>{props.gameData.age}+</p>
                 </div>
             </div>

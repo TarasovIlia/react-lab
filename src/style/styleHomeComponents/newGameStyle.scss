@@ -66,7 +66,23 @@
 
 .game-card.back {
     transform: rotateY(-180deg);
-    padding: 16px;
+    padding: 12px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    align-items: center;
+    >button {
+        margin: 0px;
+    }
+    >p{
+        font-size: 15px;
+        &:last-child {
+            padding-top: 40px;
+        }
+        &:first-child {
+            width: 100%;
+        }   
+    }
 }
 
 .price {

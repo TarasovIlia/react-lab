@@ -1,9 +1,17 @@
 .sign-up-button {
     padding: 0px 10px;
     p {
+        display: flex;
+        justify-content: space-around;
+        align-items: center;
         border: solid 2px #fff;
         border-radius: 22px;
         padding: 10px 20px;
+        .profile-img {
+            width: 20px;
+            margin-left: 15px;
+        }
+        
     }
     &:hover {
         background: none;

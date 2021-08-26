@@ -21,7 +21,6 @@ import ModalSignUp from './components/modalWindow/modalSignUp';
 import ModalSignIn from './components/modalWindow/modalSignIn';
 import ModalCahngePassword from './components/modalWindow/modalCahngePassword';
 
-
 import UserProfile from './components/user-profile/userProfile';
 import Cart from './components/cart/cart'
 
@@ -31,6 +30,8 @@ function App (){
   const modalUp = useSelector((state) => state.modalUp.value)
   const modalIn = useSelector((state) => state.modalIn.value)
   const ChangePassword = useSelector((state) => state.modalChangePassword.value)
+  
+
 return (
     <div>
       <div className="mainWrapper">

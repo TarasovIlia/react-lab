@@ -25,7 +25,6 @@ export default function UserProfile() {
         if (NewUserName) {
             setNewUserName('')
             FIND_USER_NAME(NewUserName)
-            window.location.pathname = '/profile'
         }
     }
 
