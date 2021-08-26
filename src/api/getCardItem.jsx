@@ -5,7 +5,7 @@ const axios = require('axios')
 
 export default function GET_CART_ITEM() {
     const [data, setData] = useState([])
-    axios.get('http://localhost:3000/Card')
+    axios.get('http://localhost:3000/Cart')
     .then((responce) => setData(responce.data));
 
     return data

@@ -4,12 +4,19 @@ import { useState } from 'react'
 
 export default function CardItem(props) {
     const [amount, setAmount] = useState(1)
+    const [checked, setChecked] = useState(false)
+    const setID = () => {
+        setChecked(!checked)
+        !checked ? props.getItemID(props.data.id) : props.getItemID(null)
+    }
     const price = (props.data.priceGame * amount).toFixed(2)
 
     const decrement = () => {
         if (amount >= 2) setAmount(amount -1)
         else setAmount(amount + 0)
     }
+
+    props.getTotalCost(price)
 
     return (
         <tr className='table-tr item-cart'>
@@ -31,12 +38,14 @@ export default function CardItem(props) {
                 <p>{price}</p>
             </td>
             <td className='remove-table'>
-                <input type="checkbox" />
+                <input checked={checked} onChange={setID} type="checkbox" />
             </td>
         </tr>
     )
 }
 CardItem.propTypes = {
     data: PropTypes.any,
+    getTotalCost: PropTypes.number,
+    getItemID: PropTypes.number,
     gameName: PropTypes.string,
   };

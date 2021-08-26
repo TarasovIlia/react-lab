@@ -306,46 +306,5 @@
       "username": "ba812-1842177"
     }
   ],
-  "Card": [
-    {
-      "gameName": "Assassin's Creed Valhalla",
-      "priceGame": "31.99",
-      "platform": {
-        "XboxOne": true,
-        "Playstation5": true,
-        "PC": true
-      },
-      "id": 1
-    },
-    {
-      "gameName": "Terraria",
-      "priceGame": "25.99",
-      "platform": {
-        "XboxOne": true,
-        "Playstation5": true,
-        "PC": true
-      },
-      "id": 2
-    },
-    {
-      "gameName": "Spider Man",
-      "priceGame": "28.99",
-      "platform": {
-        "XboxOne": false,
-        "Playstation5": true,
-        "PC": false
-      },
-      "id": 3
-    },
-    {
-      "gameName": "Hitman 3",
-      "priceGame": "36.99",
-      "platform": {
-        "XboxOne": true,
-        "Playstation5": true,
-        "PC": true
-      },
-      "id": 4
-    }
-  ]
+  "Cart": []
 }

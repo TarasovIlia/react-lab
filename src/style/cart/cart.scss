@@ -9,6 +9,9 @@
     }
     .item-cart {
         background-color: rgb(77, 58, 77);
+        .price-table {
+            width: 110px;
+        }
         .amount-table {
             display: flex;
             align-items: center;
