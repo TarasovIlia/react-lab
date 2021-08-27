@@ -4,6 +4,7 @@ import { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import PropTypes from 'prop-types'
 import EDIT_GAME_CARD from '../../api/editGameCard'
+import DELETE_GAME_CARD from '../../api/deleteGame'
 
 
 export default function EditMenu(props) {
@@ -18,6 +19,8 @@ export default function EditMenu(props) {
     const [PC, setPC] = useState(props.data.platform.PC)
     const [XboxOne, setXboxOne] = useState(props.data.platform.XboxOne)
     const [Playstation5, setPlaystation5] = useState(props.data.platform.Playstation5)
+
+    const [confirmPanel, setConfirmPanel] = useState(false)
 
     const newData = []
 
@@ -35,6 +38,13 @@ export default function EditMenu(props) {
             }})
         EDIT_GAME_CARD(props.data.key, newData)
     }
+    const confirmDelete = () => {
+        DELETE_GAME_CARD(props.data.key)
+        dispatch(activModalEdit())
+    }
+    const deleteGame = () => {
+        setConfirmPanel(!confirmPanel)
+    } 
 
     return (
         <div className='edit-item-modal-window'>
@@ -91,10 +101,20 @@ export default function EditMenu(props) {
                     </form> 
                 </section>
             </div>
+            { !confirmPanel ? 
             <div className='row edit-footer'>
                 <button onClick={addNewData} className='modal-button'><p>Submit</p></button>
-                <button className='modal-button'><p>Delete card</p></button>
+                <button onClick={deleteGame} className='modal-button'><p>Delete card</p></button>
             </div>
+            :
+            <div>
+                <p>Delete {name}?</p>
+                <div className='row edit-footer'>
+                    <button onClick={confirmDelete} className='modal-button'><p>Yes</p></button>
+                    <button onClick={deleteGame} className='modal-button'><p>No</p></button>
+                </div>
+            </div>
+            }
         </div>
     </div>
     )
