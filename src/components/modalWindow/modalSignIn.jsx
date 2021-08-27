@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react'
 import { useDispatch, useSelector } from 'react-redux';
 import { activModalIn } from '../../features/modal/modalInSlice';
 
+const axios = require('axios')
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
 export default function ModalSignUp ( ) {
@@ -9,33 +10,26 @@ export default function ModalSignUp ( ) {
     const [userPass, setPass] =  useState('');
     const [userData, setUserData] = useState([])
     const [warningIndicator, setWarningIndicator] = useState(false)
-    const axios = require('axios')
 
-    const sendEmail = (e) => {
-        setEmail(e.target.value)
-    }
-    const sendPass = (e) => {
-        setPass(e.target.value)
-    }
     const dispatch = useDispatch();
+    
+    axios.get('http://localhost:3000/User')
+    .then(response => setUserData(response.data))
+    const userValidationEmail = userData.filter(data => data.email === userEmail)
 
     function userAuthorization(e) {
         e.preventDefault()
-        axios.get('http://localhost:3000/User')
-        .then(response => {
-            setUserData(response.data)
-            const userValidationEmail = userData.filter(data => data.email === userEmail)
-            const userValidationPass = userValidationEmail.filter(data => data.password === userPass)
-            if (userValidationEmail.length === 1 && userValidationPass.length === 1) {
-                localStorage.setItem("email", userEmail)
-                dispatch(activModalIn());
-                window.location.pathname = '/'
-            }
-            else {
-                setWarningIndicator(true)
-                return false
-            }
-        })
+        const userValidationPass = userValidationEmail.filter(data => data.password === userPass)
+        if (userValidationEmail.length === 1 && userValidationPass.length === 1) {
+            localStorage.setItem("email", userEmail)
+            dispatch(activModalIn());
+            window.location.pathname = '/'
+        }
+        else {
+            setWarningIndicator(true)
+            return false
+        }
+
     }
 
     return (
@@ -46,8 +40,8 @@ export default function ModalSignUp ( ) {
             </button>
                 <div className='input-group'>
                     <form action=''>
-                        <input onChange={sendEmail} className='search-input' type='email' placeholder='your e-mail' />
-                        <input onChange={sendPass} className='search-input' type='password' placeholder='your password' />
+                        <input onChange={(e) => setEmail(e.target.value)} className='search-input' type='email' placeholder='your e-mail' />
+                        <input onChange={(e) => setPass(e.target.value)} className='search-input' type='password' placeholder='your password' />
                         <aside style={{bottom : warningIndicator ? '0px' : '-120px'}} className='alarm'><p>invalid user or password</p></aside>
                         <button style={{ opacity : userEmail.length > 5 ? '1' : '0.4' }} onClick={userAuthorization} className='modal-button'><p>sign in</p></button>
                     </form>
