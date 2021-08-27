@@ -12,7 +12,7 @@ import PropTypes from 'prop-types';
 
 import Star from './elemenst/star'
 
-export default function GameCard (props) {
+function GameCard (props) {
     const dispatch = useDispatch()
     const admin = ADMIN_CHECKOUT() 
     let starCounter = props.gameData.stars
@@ -54,3 +54,5 @@ GameCard.propTypes = {
     gameData: PropTypes.any,
     key: PropTypes.number
 };
+
+export default React.memo(GameCard)
