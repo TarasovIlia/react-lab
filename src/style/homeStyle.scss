@@ -1,0 +1,114 @@
+@import '../style/components/variables.scss';
+.home-wrapper {
+    width: 100%;
+    height: auto;
+    background-color: $colorBackGround;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    position: relative;
+}
+
+.no-result-animation-wrapper {
+    .no-result-animation {
+        position: relative;
+        width: 15px;
+        height: 15px;
+        background-color: blueviolet;
+        border-radius: 22px;
+        left: -100%;
+        animation: 0.6s ease-in 3 running loading;
+    }
+    >p { 
+        animation-name: nomatch;
+        animation-delay: 1.8s;
+        animation-fill-mode: forwards;
+        animation-duration: 0.4s;
+
+        transform: translateY(40px);
+        
+        opacity: 0.7;
+        font-weight: 400;
+        color: #000;
+        font-size: 18px;
+        text-align: center;
+        margin-top: 3px;
+    }
+}
+
+@keyframes loading {
+    0% {
+        left: -100%;
+    }
+    100% {
+       left: 100%;
+    }
+}
+@keyframes nomatch {
+    0% {
+        transform: translateY(40px);
+    }
+    100% {
+        transform: translateY(0px);
+    }
+}
+
+
+.search-input {
+    outline: none;
+    border: solid 3px #fff;
+    box-shadow: none;
+    outline-offset: 0;
+
+    background-color: #fff;
+
+    border-radius: 22px;
+    padding: 13px;
+    margin-top: 20px;
+    width: 640px;
+    transition-duration: 0.2s;
+    font-size: 18px;
+    position: relative;
+    z-index: 2;
+    
+}
+.search-help {
+    position: absolute;
+    overflow: hidden;
+    >p {
+        font-size: 18px;
+        color: #000;
+        border-radius: 22px;
+        padding: 10px 10px 14px 16px;
+        margin-top: 3px;
+        &:hover {
+            background-color: blueviolet;
+            cursor: pointer;
+            color: #fff;
+        }
+    }
+    width: 100%;
+    background-color: #fff;
+    border-bottom-left-radius: 22px;
+    border-bottom-right-radius: 22px;
+    padding: 25px 3px 13px 3px;
+    margin-top: -20px;
+
+    z-index: 1;
+}
+.main-page{
+    &:focus {
+        border: solid 3px blueviolet;
+        background-color: #fff;
+        width: 740px;
+        transition-duration: 0.2s;
+    }
+}
+
+.no-result {
+    width: 100%;
+    height: 60vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}

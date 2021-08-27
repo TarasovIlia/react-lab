@@ -1,0 +1,71 @@
+@import '../components/variables.scss';
+.edit-item-modal-window {
+    background-color: $colorHeader;
+    border: solid 3px blueviolet;
+    border-radius: 22px;
+    width: 55%;
+    position: relative;
+
+    overflow: hidden;
+    .main-modal-conteiner {
+        width: 100%;
+        height: 100%;
+        padding: 20px;
+        .content-modal {
+            width: 100%;
+            height: 100%;
+            padding: 30px;
+            position: relative;
+
+            .img-edit-card {
+                img {
+                    margin-top: 20px;
+                    width: 80%;
+                }
+            }
+
+            .info-edit-card {
+                .input-form {
+                    margin-top: 20px;
+                    .age-input {
+                        width: 10%;
+                        border-radius: 6px;
+                    }
+                    .row {
+                        width: 600px;
+                        align-items: center;
+                        margin-top: 10px;
+                    }
+                    .active {
+                        
+                    }
+                }
+                .search-input {
+                    width: 70%;
+                    margin-top: 10px;
+                }
+            }
+        }
+    }
+    .edit-footer {
+        width: 70%;
+        margin: 0px auto;
+        display: flex;
+        justify-content: space-between;
+
+        transition-duration: 0.5s;
+    }
+    .footer-confirm {
+        transition-duration: 0.5s;
+    }
+}
+.active {
+    transform: translateY(0px);
+    transition-duration: 0.5s;
+    position: relative;
+}
+.disactive {
+    transform: translateY(220px);
+    transition-duration: 0.5s;
+    position: absolute;
+}

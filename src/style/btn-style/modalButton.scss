@@ -1,0 +1,17 @@
+.modal-button {
+    margin-top: 40px;
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+    p{
+        padding: 14px 42px;
+        border-radius: 22px;
+        background-color: blueviolet;
+        transition-duration: 0.2s;
+        &:hover {
+            background-color: rgb(109, 31, 182);
+            transition-duration: 0.2s;
+        }
+    }
+}

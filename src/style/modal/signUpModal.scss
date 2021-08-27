@@ -1,0 +1,52 @@
+@import '../components/variables.scss';
+.wrapper-modal-window {
+    width: 100%;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: rgba(0, 0, 0, 0.397);
+    position: relative;
+    .modal-window {
+        background-color: $colorHeader;
+        border: solid 3px blueviolet;
+        border-radius: 22px;
+        width: 50%;
+        height: 40vw;
+        >h1 {
+            text-align: center;
+            padding-top: 30%;
+        }
+        .input-group {
+            margin: 200px auto;
+            width: 520px;
+            form {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                .search-input {
+                    width: 100%;
+                }
+                .alarm {
+                    padding: 10px 20px;
+                    position: absolute;
+                    p {
+                        font-size: 18px;
+                        opacity: 0.8;
+                        color: red;
+                    }
+                    background-color: #fff;
+                    border-radius: 12px;
+                    margin: 20px 0px;
+
+                    transition-duration: 0.3s;
+                }
+            }
+        }
+        position: relative;
+        overflow: hidden;
+    }
+    position: fixed;
+    top: 0px;
+    z-index: 99;
+}

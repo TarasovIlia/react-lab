@@ -1,0 +1,341 @@
+{
+  "CategoriesData": [
+    {
+      "categoriesName": "PC",
+      "imgOfCategoty": "https://img.icons8.com/ios-filled/500/000000/microsoft.png",
+      "link": "PC",
+      "key": "1"
+    },
+    {
+      "categoriesName": "Xbox One",
+      "imgOfCategoty": "https://img.icons8.com/ios-filled/500/000000/xbox.png",
+      "link": "XboxOne",
+      "key": "2"
+    },
+    {
+      "categoriesName": "Playstation 5",
+      "imgOfCategoty": "https://img.icons8.com/ios-filled/500/000000/play-station.png",
+      "link": "Playstation5",
+      "key": "3"
+    }
+  ],
+  "NewGameData": [
+    {
+      "gameName": "Minecraft",
+      "imgGame": "https://www.goha.ru/s/A:MZ/NN/4S5qEhEjxq.jpg",
+      "priceGame": "25.50",
+      "currency": "$",
+      "discription": "Minecraft is a sandbox video game developed by the Swedish video game developer Mojang Studios.",
+      "stars": "5",
+      "age": 6,
+      "key": "1",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": false
+      },
+      "genres": "survive",
+      "release": 2006,
+      "id": 1
+    },
+    {
+      "gameName": "Owerwatch",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/3/33/Overwatch_Origins_Edition_PC_cover.jpg",
+      "priceGame": "23.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "4",
+      "age": 12,
+      "key": "2",
+      "platform": {
+        "XboxOne": false,
+        "Playstation5": false,
+        "PC": true
+      },
+      "genres": "shooter",
+      "release": 2014,
+      "id": 2
+    },
+    {
+      "gameName": "Terraria",
+      "imgGame": "https://images-na.ssl-images-amazon.com/images/I/4127LRAPwXL.jpg",
+      "priceGame": "25.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "4",
+      "age": 3,
+      "key": "3",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": true
+      },
+      "genres": "survive",
+      "release": 2010,
+      "id": 3
+    },
+    {
+      "gameName": "Grand Theft Auto V",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/c/c8/GTAV_Official_Cover_Art.jpg",
+      "priceGame": "35.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "5",
+      "age": 18,
+      "key": "4",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": true
+      },
+      "genres": "shooter",
+      "release": 2012,
+      "id": 4
+    },
+    {
+      "gameName": "God of War 4",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/5/5a/God_of_War_2018_cover.jpg",
+      "priceGame": "49.55",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "5",
+      "age": 18,
+      "key": "5",
+      "platform": {
+        "XboxOne": false,
+        "Playstation5": true,
+        "PC": false
+      },
+      "genres": "rpg",
+      "release": 2018,
+      "id": 5
+    },
+    {
+      "gameName": "Deus Ex: Mankind Divided",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/a/a2/Deus_Ex_Mankind_Divided_cover.jpg",
+      "priceGame": "26.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "4",
+      "age": 16,
+      "key": "6",
+      "platform": {
+        "XboxOne": false,
+        "Playstation5": true,
+        "PC": true
+      },
+      "genres": "rpg",
+      "release": 2016,
+      "id": 6
+    },
+    {
+      "gameName": "Assassin's Creed Valhalla",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/2/26/AC_Valhalla_standard_edition.jpg",
+      "priceGame": "31.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "4",
+      "age": 18,
+      "key": "7",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": true
+      },
+      "genres": "rpg",
+      "release": 2021,
+      "id": 7
+    },
+    {
+      "gameName": "UFC 4",
+      "imgGame": "https://image.api.playstation.com/vulcan/img/rnd/202102/0809/fkloHdJYS5wJzwFUfdGyRqPi.png",
+      "priceGame": "22.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "3",
+      "age": 12,
+      "key": "8",
+      "platform": {
+        "XboxOne": false,
+        "Playstation5": true,
+        "PC": false
+      },
+      "genres": "survive",
+      "release": 2020,
+      "id": 8
+    },
+    {
+      "gameName": "Call of Duty Black Ops 4",
+      "imgGame": "https://www.digiseller.ru/preview/376679/p1_2646374_644123fd.jpg",
+      "priceGame": "33.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "4",
+      "age": 14,
+      "key": "9",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": true
+      },
+      "genres": "shooter",
+      "release": 2020,
+      "id": 9
+    },
+    {
+      "gameName": "Battlefield 5",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/5/59/BFV_Standard_Edition.png",
+      "priceGame": "31.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "3",
+      "age": 18,
+      "key": "10",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": true
+      },
+      "genres": "shooter",
+      "release": 2019,
+      "id": 10
+    },
+    {
+      "gameName": "Fable Legends",
+      "imgGame": "https://rg-mechanics.me/uploads/posts/2013-09/1006_1006.jpg",
+      "priceGame": "43.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "3",
+      "age": 16,
+      "key": "11",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": false
+      },
+      "genres": "rpg",
+      "release": 2021,
+      "id": 11
+    },
+    {
+      "gameName": "Hitman 3",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/4/4b/Hitman_3_Packart.jpg",
+      "priceGame": "36.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "4",
+      "age": 18,
+      "key": "12",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": true
+      },
+      "genres": "shooter",
+      "release": 2020,
+      "id": 12
+    },
+    {
+      "gameName": "Batman Arkham Knight",
+      "imgGame": "https://upload.wikimedia.org/wikipedia/ru/6/6c/Batman_Arkham_Knight_Cover_Art.jpg",
+      "priceGame": "29.99",
+      "currency": "$",
+      "discription": "lorem",
+      "stars": "5",
+      "age": 12,
+      "key": "13",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": true
+      },
+      "genres": "rpg",
+      "release": 2016,
+      "id": 13
+    },
+    {
+      "gameName": "Spider Man",
+      "imgGame": "https://image.api.playstation.com/vulcan/ap/rnd/202011/0402/pZ2pIEEnH7YhEtpxh1CY6KDz.png",
+      "priceGame": "28.22",
+      "currency": "$",
+      "discription": "is a 2018 action-adventure game developed by Insomniac Games and published by Sony Interactive Entertainment.",
+      "stars": "5",
+      "age": 12,
+      "key": "14",
+      "platform": {
+        "XboxOne": false,
+        "Playstation5": true,
+        "PC": false
+      },
+      "genres": "rpg",
+      "release": 2018,
+      "id": 14
+    }
+  ],
+  "NavigationData": [
+    {
+      "href": "products",
+      "title": "products",
+      "key": "3",
+      "categories": [
+        {
+          "name": "PC",
+          "link": "PC",
+          "key": "1"
+        },
+        {
+          "name": "Playstation 5",
+          "link": "Playstation5",
+          "key": "2"
+        },
+        {
+          "name": "Xbox One",
+          "link": "XboxOne",
+          "key": "3"
+        }
+      ]
+    },
+    {
+      "href": "home",
+      "title": "home",
+      "key": "1"
+    },
+    {
+      "href": "about",
+      "title": "about",
+      "key": "2"
+    }
+  ],
+  "User": [
+    {
+      "email": "tarasav",
+      "password": "123123",
+      "id": 1
+    },
+    {
+      "email": "tarasav002@gmail.com",
+      "password": "333333",
+      "id": 2,
+      "username": "Iliya"
+    },
+    {
+      "email": "adminPage",
+      "password": "333222",
+      "id": 3,
+      "username": "KEK"
+    }
+  ],
+  "Cart": [
+    {
+      "gameName": "UFC 4",
+      "priceGame": "22.99",
+      "platform": {
+        "XboxOne": false,
+        "Playstation5": true,
+        "PC": false
+      },
+      "id": 6
+    }
+  ]
+}

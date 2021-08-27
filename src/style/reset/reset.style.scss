@@ -1,0 +1,24 @@
+.content {
+    margin-top: 70px;
+  }
+  a {
+    text-decoration: none;
+    color: black;
+  }
+  h1 {
+    color: #fff;
+  }
+  p {
+    font-size: 21px;
+    font-weight: 400;
+    color: #fff;
+  }
+  input :active, :hover, :focus {
+    outline: 0;
+    outline-offset: 0;
+}
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+    -webkit-appearance: none;
+}
+  

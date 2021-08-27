@@ -1,0 +1,51 @@
+.table {
+    width: 100%;
+    border-spacing: 0px;
+    margin-top: 40px;
+    .table-header {
+        td {
+            border-bottom: 2px solid #fff;
+        }
+    }
+    .item-cart {
+        background-color: rgb(77, 58, 77);
+        .price-table {
+            width: 110px;
+        }
+        .amount-table {
+            display: flex;
+            align-items: center;
+            justify-content: space-around;
+            cursor: pointer;
+            .card-btn {
+                position: inherit;
+            }
+        }
+    }
+    .table-tr {
+        height: 100px;
+        position: relative;
+        td {
+            p {
+                text-align: center;
+            }
+            &:last-child {
+                display: flex;
+                align-items: center;
+                justify-content: center;
+                height: 100px;
+            }
+        }
+    }
+}
+.footer {
+    margin: 70px auto 0px auto;
+    width: 80%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+}
+
+.button-table {
+    margin: 0px;
+}

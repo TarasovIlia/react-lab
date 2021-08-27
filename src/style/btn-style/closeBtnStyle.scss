@@ -1,0 +1,16 @@
+@import '../components/variables.scss';
+.close-btn {
+    background: none;
+    outline: none;
+    border: none;
+    cursor: pointer;
+
+    position: absolute;
+    top: 20px;
+    right: 40px;
+    p{
+        &:hover {
+            color: blueviolet;
+        }
+    }
+}
