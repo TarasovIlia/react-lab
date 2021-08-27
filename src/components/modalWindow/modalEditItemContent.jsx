@@ -81,7 +81,7 @@ export default function EditMenu(props) {
                         </div>
                         <div className='row'>
                             <p>Age</p>
-                            <div className=''><p>{age}</p></div>
+                            <input onChange={(e) => setAge(e.target.value)} value={age} type="number" className='search-input age-input' />
                         </div>
                         <div className='row'>
                             <p>Paltform</p>
@@ -101,20 +101,17 @@ export default function EditMenu(props) {
                     </form> 
                 </section>
             </div>
-            { !confirmPanel ? 
-            <div className='row edit-footer'>
+            <div  className={ confirmPanel ? 'row edit-footer disactive' : 'row edit-footer active'}>
                 <button onClick={addNewData} className='modal-button'><p>Submit</p></button>
                 <button onClick={deleteGame} className='modal-button'><p>Delete card</p></button>
             </div>
-            :
-            <div>
+            <div className={ confirmPanel ? 'footer-confirm active' : 'footer-confirm disactive'}>
                 <p>Delete {name}?</p>
                 <div className='row edit-footer'>
                     <button onClick={confirmDelete} className='modal-button'><p>Yes</p></button>
                     <button onClick={deleteGame} className='modal-button'><p>No</p></button>
                 </div>
             </div>
-            }
         </div>
     </div>
     )
