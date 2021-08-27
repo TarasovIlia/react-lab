@@ -23,16 +23,16 @@
     {
       "gameName": "Minecraft",
       "imgGame": "https://www.goha.ru/s/A:MZ/NN/4S5qEhEjxq.jpg",
-      "priceGame": "29.99",
+      "priceGame": "25.50",
       "currency": "$",
-      "discription": "lorem",
+      "discription": "Minecraft is a sandbox video game developed by the Swedish video game developer Mojang Studios.",
       "stars": "5",
       "age": 6,
       "key": "1",
       "platform": {
         "XboxOne": true,
         "Playstation5": true,
-        "PC": true
+        "PC": false
       },
       "genres": "survive",
       "release": 2006,

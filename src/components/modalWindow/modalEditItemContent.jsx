@@ -15,11 +15,24 @@ export default function EditMenu(props) {
     const [description, setDescription] = useState(props.data.discription)
     const [category, setCategory] = useState(props.data.genres)
     const [age, setAge] = useState(props.data.age)
+    const [PC, setPC] = useState(props.data.platform.PC)
+    const [XboxOne, setXboxOne] = useState(props.data.platform.XboxOne)
+    const [Playstation5, setPlaystation5] = useState(props.data.platform.Playstation5)
 
     const newData = []
 
     const addNewData = () => {
-        newData.push({gameName : name}, {imgGame : img}, {priceGame : price}, {description : description}, {genres : category}, {age : age})
+        newData.push({gameName : name},
+            {imgGame : img},
+            {priceGame : price},
+            {description : description},
+            {genres : category},
+            {age : age},
+            {platform : {
+                PC : PC,
+                XboxOne : XboxOne,
+                Playstation5 : Playstation5
+            }})
         EDIT_GAME_CARD(props.data.key, newData)
     }
 
@@ -65,15 +78,15 @@ export default function EditMenu(props) {
                         </div>
                         <div className='row'>
                             <label htmlFor=""><p>PC</p></label>
-                            <input type="checkbox" />
+                            <input onChange={() => setPC(!PC)} checked={PC} type="checkbox" />
                         </div>
                         <div className='row'>
                             <label htmlFor=""><p>PlayStation 5</p></label>
-                            <input type="checkbox" />
+                            <input onChange={() => setXboxOne(!XboxOne)} checked={XboxOne} type="checkbox" />
                         </div>
                         <div className='row'>
                             <label htmlFor=""><p>Xbox One</p></label>
-                            <input type="checkbox" />
+                            <input onChange={() => setPlaystation5(!Playstation5)} checked={Playstation5} type="checkbox" />
                         </div>
                     </form> 
                 </section>
