@@ -1,8 +1,10 @@
 import React from 'react';
-import CardItem from './cartItem';
+import { useState } from 'react';
+
 import GET_CART_ITEM from '../../api/getCardItem'
 import REMOVE_FROM_CART from '../../api/removeFromCart'
-import { useState } from 'react';
+
+import CardItem from './cartItem';
 
 export default function Cart () {
     const data = GET_CART_ITEM()
@@ -11,7 +13,7 @@ export default function Cart () {
     const getTotalCost = (price) => setTotalCost(price)
     const getItemID = (id) => setItemID(id)
 
-    const cardItem = data.map(data => <CardItem getItemID={getItemID}  getTotalCost={getTotalCost} key={data.key} data={data}/> )
+    const cardItem = data.map(data => <CardItem getItemID={getItemID} key={data.key} getTotalCost={getTotalCost} data={data}/> )
 
     const totalCost = cost
 

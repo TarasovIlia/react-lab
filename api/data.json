@@ -328,16 +328,6 @@
   ],
   "Cart": [
     {
-      "gameName": "God of War 4",
-      "priceGame": "49.99",
-      "platform": {
-        "XboxOne": false,
-        "Playstation5": true,
-        "PC": false
-      },
-      "id": 2
-    },
-    {
       "gameName": "Terraria",
       "priceGame": "25.99",
       "platform": {
@@ -346,6 +336,16 @@
         "PC": true
       },
       "id": 3
+    },
+    {
+      "gameName": "Call of Duty Black Ops 4",
+      "priceGame": "33.99",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": true
+      },
+      "id": 5
     }
   ]
 }

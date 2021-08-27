@@ -10,21 +10,23 @@ import { Route, Redirect, withRouter, Switch } from "react-router-dom";
 import { useDispatch, useSelector } from 'react-redux';
 
 import Home from './components/home/Home'
-import About from './components/about/About'
-import Products from './components/products/Products'
-import Header from './components/header/header'
-import Footer from './components/footer/Footer'
+const About = React.lazy (() => import ('./components/about/About'))
+const Products = React.lazy (() => import ('./components/products/Products'))
+const Header = React.lazy (() =>  import ('./components/header/header'))
+const Footer = React.lazy (() => import ('./components/footer/Footer'))
 import PcComponetns from './components/categries/PC/PcComponent';
 import Playstation5Componetns from './components/categries/Playstation5/Playstation5';
 import XboxOneComponetns from './components/categries/XboxOne/XboxOneComponents';
+const UserProfile = React.lazy (() => import ('./components/user-profile/userProfile'));
+const Cart = React.lazy (() => import ('./components/cart/cart'))
 
 import ModalSignUp from './components/modalWindow/modalSignUp';
 import ModalSignIn from './components/modalWindow/modalSignIn';
 import ModalCahngePassword from './components/modalWindow/modalCahngePassword';
 import ModalEditItem from './components/modalWindow/modalEditItem'
 
-import UserProfile from './components/user-profile/userProfile';
-import Cart from './components/cart/cart'
+import Spinner from './fallback/spinner';
+import reactDom from 'react-dom';
 
 
 
@@ -38,21 +40,33 @@ function App (){
 return (
     <div>
       <div className="mainWrapper">
-          <Header/>
+          <React.Suspense fallback={<Spinner />}>
+            <Header/>
+          </React.Suspense>
           <Switch>
             <div className="content">
               <Redirect from='/' to='/home'/>
-              <Route history={history} path='/about' component={About} />
+              <React.Suspense fallback={<Spinner />}>
+                <Route history={history} path='/about' component={About} />
+              </React.Suspense>
               <Route history={history} path='/home' component={Home} />
-              <Route history={history} path='/products' component={Products} />
+              <React.Suspense fallback={<Spinner />}>
+                <Route history={history} path='/products' component={Products} />
+              </React.Suspense>
               <Route history={history} path='/PC' component={PcComponetns} />
               <Route history={history} path='/Playstation5' component={Playstation5Componetns} />
               <Route history={history} path='/XboxOne' component={XboxOneComponetns} />
-              <Route history={history} path='/profile' component={UserProfile} />
-              <Route history={history} path='/cart' component={Cart} />
+              <React.Suspense fallback={<Spinner />}>
+                <Route history={history} path='/profile' component={UserProfile} />
+              </React.Suspense>
+              <React.Suspense fallback={<Spinner />}>
+                <Route history={history} path='/cart' component={Cart} />
+              </React.Suspense>
             </div>
           </Switch>
-          <Footer />
+          <React.Suspense fallback={<Spinner />}>
+            <Footer />            
+          </React.Suspense>
       </div>
       <main>
         {modalIn && ReactDOM.createPortal (

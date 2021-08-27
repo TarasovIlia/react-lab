@@ -4,10 +4,11 @@ import { useSelector } from 'react-redux'
 
 /* eslint @typescript-eslint/no-var-requires: "off" */
 
-import GameCard from '../home/homeComponent/gameCard'
+const GameCard = React.lazy(() => import ('../home/homeComponent/gameCard'))
 import Search from '../home/homeComponent/search'
 import SideBar from './sideBar'
 import SORT_BY_PARAMS from '../../api/sort-by-params'
+import Spinner from '../../fallback/spinner'
 
 export default function Products () {
     const [seacrh, setValue] = useState('')
@@ -35,7 +36,9 @@ export default function Products () {
                 <div className='main-wrapper-group main-wrapper-underline'>
                     <p>{ searchAction ? 'Result:' : 'Products' }</p>
                     <div className='main-wrapper-group-grid'>
-                    {FilterResult}
+                    <React.Suspense fallback={<Spinner />}>
+                        {FilterResult}
+                    </React.Suspense>
                     </div>
                 </div>}
             </div>
