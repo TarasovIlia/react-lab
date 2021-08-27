@@ -9,11 +9,15 @@ export default function SORT_BY_PARAMS(sortParams) {
     const genresFilter = useSelector((state) => state.genres.value)
     const ageFilter = useSelector((state) => state.age.value)
     const sortTypeParams = useSelector((state) => state.sortTypeParams.value)
+    const typeValue = () => {
+        if (sortTypeParams === "Ascending") return -1
+        else if (sortTypeParams === "Descending") return 1
+    }
 
     axios.get('http://localhost:3000/NewGameData')
         .then(function(responce) { if (responce) setData(responce.data) })
 
-    const sortTypeOne = sortTypeParams
+    const sortTypeOne = typeValue()
     const sortTypeMinusOne = -sortTypeOne
 
     const AgeFilter = data.filter(data => data.age >= ageFilter)

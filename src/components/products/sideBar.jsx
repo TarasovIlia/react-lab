@@ -16,11 +16,11 @@ export default function SideBar() {
                 <section className='container'>
                         <div className='row-container sort'>
                             <p>Criteria</p>
-                            <SelectCriteria />
+                            <SelectCriteria option1={'Name'} option2={'Rating'} option3={'Price'}/>
                         </div>
                         <div className='row-container sort'>
                             <p>Type</p>
-                            <SelectType />  
+                            <SelectType option1={'Ascending'} option2={'Descending'}/>  
                         </div>
                 </section>
             </div>

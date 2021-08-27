@@ -1,6 +1,6 @@
 import React from 'react'
 import PropTypes from 'prop-types'
-import { useState } from 'react'
+import { useState, useMemo } from 'react'
 
 export default function CardItem(props) {
     const [amount, setAmount] = useState(1)
@@ -11,10 +11,10 @@ export default function CardItem(props) {
     }
     const price = (props.data.priceGame * amount).toFixed(2)
 
-    const decrement = () => {
+    const decrement = useMemo(() => () => {
         if (amount >= 2) setAmount(amount -1)
         else setAmount(amount + 0)
-    }
+    }, [amount])
 
     props.getTotalCost(price)
 
@@ -24,7 +24,9 @@ export default function CardItem(props) {
                 <p>{props.data.gameName}</p>
             </td>
             <td className='platform-table'>
-                <p>{props.data.platform.PC}</p>
+                <p>{props.data.platform.PC ? "PC" : null}</p>
+                <p>{props.data.platform.XboxOne ? "Xbox One" : null}</p>
+                <p>{props.data.platform.Playstation5 ? "Playstation 5" : null}</p>
             </td>
             <td className='order-date-table'>
                 <p>Order date</p>

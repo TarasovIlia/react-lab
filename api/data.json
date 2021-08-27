@@ -328,24 +328,14 @@
   ],
   "Cart": [
     {
-      "gameName": "Terraria",
-      "priceGame": "25.99",
+      "gameName": "UFC 4",
+      "priceGame": "22.99",
       "platform": {
-        "XboxOne": true,
+        "XboxOne": false,
         "Playstation5": true,
-        "PC": true
+        "PC": false
       },
-      "id": 3
-    },
-    {
-      "gameName": "Call of Duty Black Ops 4",
-      "priceGame": "33.99",
-      "platform": {
-        "XboxOne": true,
-        "Playstation5": true,
-        "PC": true
-      },
-      "id": 5
+      "id": 6
     }
   ]
 }

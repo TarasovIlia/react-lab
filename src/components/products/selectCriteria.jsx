@@ -1,11 +1,11 @@
-import React from 'react'
-import { useState } from 'react'
+import React, { useState } from 'react'
 import { useDispatch } from 'react-redux'
 import { setSortParams } from '../../features/filter/sort/sortSlice'
+import PropTypes  from 'prop-types'
 
-export default function SelectCriteria() {
+export default function SelectCriteria(props) {
     const [openSelectList, setOpenSelectList] = useState(true)
-    const [selected, setSelected] = useState('Name')
+    const [selected, setSelected] = useState(props.option1)
     const dispatch = useDispatch()
     dispatch(setSortParams(selected))
     
@@ -31,9 +31,15 @@ export default function SelectCriteria() {
                 </label>
             </div>
             <div style={openSelectList ? OpenSelectList : CloseSelectList} className='option'>
-                <p onClick={changeValue}>Price</p>
-                <p onClick={changeValue}>Rating</p>
+                <p onClick={changeValue}>{props.option2}</p>
+                <p onClick={changeValue}>{props.option3}</p>
             </div>
         </div>
     )
 }
+
+SelectCriteria.propTypes = {
+    option1: PropTypes.string,
+    option2: PropTypes.string,
+    option3: PropTypes.string,
+  };

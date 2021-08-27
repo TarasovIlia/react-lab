@@ -19,7 +19,6 @@ export default function Cart () {
 
     const removeFromCart = () => {
         itemID ? REMOVE_FROM_CART(itemID) : null
-
     }
 
     return (
