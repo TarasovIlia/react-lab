@@ -8,14 +8,18 @@ import CardItem from './cartItem';
 
 export default function Cart () {
     const data = GET_CART_ITEM()
-    const [cost, setTotalCost] = useState(0)
     const [itemID, setItemID] = useState(null)
-    const getTotalCost = (price) => setTotalCost(price)
     const getItemID = (id) => setItemID(id)
 
-    const cardItem = data.map(data => <CardItem getItemID={getItemID} key={data.key} getTotalCost={getTotalCost} data={data}/> )
+    const cardItem = data.map(data => <CardItem getItemID={getItemID} key={data.key} data={data}/> )
 
-    const totalCost = cost
+    const totalprice = () => {
+        let total = 0
+        data.forEach((data) => {
+            total += +data.priceGame * data.amount
+        });
+        return total.toFixed(2)
+    } 
 
     const removeFromCart = () => {
         itemID ? REMOVE_FROM_CART(itemID) : null
@@ -58,10 +62,10 @@ export default function Cart () {
                 </table>
                 <div className='footer'>
                     <section>
-                        <p>Game cost: {totalCost}</p>
+                        <p>Total cost: {totalprice()}</p>
                     </section>
                     <section>
-                        <p>Your balance: {(10 + +totalCost).toFixed(2)}</p>
+                        <p>Your balance: {(10 + +totalprice())}</p>
                     </section>
                     <section>
                         <button  className='modal-button button-table'><p>Bye</p></button>

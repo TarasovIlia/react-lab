@@ -5,6 +5,7 @@ export default function ADD_TO_CART(cartData) {
     axios.post('http://localhost:3000/Cart', {
         gameName : cartData.gameName,
         priceGame : cartData.priceGame,
-        platform : cartData.platform
+        platform : cartData.platform,
+        amount : 1
     })
 }

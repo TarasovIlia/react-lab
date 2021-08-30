@@ -329,6 +329,17 @@
   ],
   "Cart": [
     {
+      "gameName": "Fable Legends",
+      "priceGame": "43.99",
+      "platform": {
+        "XboxOne": true,
+        "Playstation5": true,
+        "PC": false
+      },
+      "amount": 1,
+      "id": 1
+    },
+    {
       "gameName": "UFC 4",
       "priceGame": "22.99",
       "platform": {
@@ -336,7 +347,8 @@
         "Playstation5": true,
         "PC": false
       },
-      "id": 6
+      "amount": 1,
+      "id": 2
     }
   ]
 }

@@ -1,9 +1,11 @@
 import React from 'react'
 import PropTypes from 'prop-types'
 import { useState, useMemo } from 'react'
+import INCREMENT_AMOUNT from '../../api/incrementAmount'
 
 export default function CardItem(props) {
-    const [amount, setAmount] = useState(1)
+    const [amount, setAmount] =useState(props.data.amount)
+    const ID = props.data.id
     const [checked, setChecked] = useState(false)
     const setID = () => {
         setChecked(!checked)
@@ -11,12 +13,16 @@ export default function CardItem(props) {
     }
     const price = (props.data.priceGame * amount).toFixed(2)
 
-    const decrement = useMemo(() => () => {
-        if (amount >= 2) setAmount(amount -1)
-        else setAmount(amount + 0)
-    }, [amount])
+    const increment = () => {
+        setAmount(amount +1)
+    }
 
-    props.getTotalCost(price)
+    const decrement = () => {
+        if (amount >= 2) 
+        setAmount(amount -1)
+    }
+
+    INCREMENT_AMOUNT(ID, amount)
 
     return (
         <tr className='table-tr item-cart'>
@@ -34,7 +40,7 @@ export default function CardItem(props) {
             <td className='amount-table'>
                 <button className='close-btn card-btn'><h1 onClick={decrement}>-</h1></button>
                 <p>{amount}</p>
-                <button className='close-btn card-btn'><h1 onClick={() => setAmount( amount + 1 )}>+</h1></button>
+                <button className='close-btn card-btn'><h1 onClick={increment}>+</h1></button>
             </td>
             <td className='price-table'>
                 <p>{price}</p>
@@ -50,4 +56,5 @@ CardItem.propTypes = {
     getTotalCost: PropTypes.number,
     getItemID: PropTypes.number,
     gameName: PropTypes.string,
+    amount: PropTypes.number
   };
